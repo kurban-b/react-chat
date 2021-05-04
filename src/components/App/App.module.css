@@ -1,0 +1,6 @@
+.container {
+  height: 100vh;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: space-between;
+}
