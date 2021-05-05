@@ -1,6 +1,6 @@
 const initialState = {
   messages: [],
-  loading: false
+  loading: false,
 };
 
 export default function messages(state = initialState, action) {
@@ -8,13 +8,13 @@ export default function messages(state = initialState, action) {
     case 'messages/load/start':
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case 'messages/load/success':
       return {
         ...state,
-        messages: action.payload
-      }
+        messages: action.payload,
+      };
     default:
       return state;
   }
@@ -24,19 +24,21 @@ export default function messages(state = initialState, action) {
 
 // тут санки
 
-export const loadMessages = () => {
+export const loadMessages = (id) => {
   return (dispatch) => {
     dispatch({
-      type: 'messages/load/start'
-    })
+      type: 'messages/load/start',
+    });
 
-    fetch(`https://api.intocode.ru:8001/api/messages/5f2ea3801f986a01cefc8bcd/5f444961a00c98053c489d5a`)
-      .then(res => res.json())
-      .then(json => {
+    fetch(
+      `https://api.intocode.ru:8001/api/messages/5f2ea3801f986a01cefc8bcd/${id}`,
+    )
+      .then((res) => res.json())
+      .then((json) => {
         dispatch({
           type: 'messages/load/success',
-          payload: json
-        })
-      })
-  }
-}
+          payload: json,
+        });
+      });
+  };
+};

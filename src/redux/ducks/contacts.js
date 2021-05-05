@@ -6,23 +6,22 @@ const initialState = {
 export default function contacts(state = initialState, action) {
   switch (action.type) {
     case 'contacts/load/start':
-      return  {
+      return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
 
     case 'contacts/load/success':
       return {
         ...state,
         contacts: action.payload,
-        loading: false
-      }
+        loading: false,
+      };
 
     default:
       return state;
   }
 }
-
 
 export const loadContacts = () => {
   return (dispatch) => {

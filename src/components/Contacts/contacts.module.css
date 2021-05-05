@@ -9,7 +9,6 @@
 
 ul {
   padding: 0;
-
 }
 
 li {
@@ -28,5 +27,5 @@ a {
 }
 
 .selected {
- color: red;
+  color: red;
 }

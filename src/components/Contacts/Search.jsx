@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Search (props) {
+function Search(props) {
   return (
     <div>
-      <input type='text' />
+      <input type="text" />
     </div>
   );
 }
