@@ -1,15 +1,28 @@
-const initialState = {};
+const initialState = {
+  contacts: [],
+  loading: false,
+};
 
 export default function contacts(state = initialState, action) {
   switch (action.type) {
+    case 'contacts/load/start':
+      return  {
+        ...state,
+        loading: true
+      }
+
+    case 'contacts/load/success':
+      return {
+        ...state,
+        contacts: action.payload,
+        loading: false
+      }
+
     default:
       return state;
   }
 }
 
-// тут экшн креэйторы
-
-// тут санки
 
 export const loadContacts = () => {
   return (dispatch) => {
@@ -21,7 +34,7 @@ export const loadContacts = () => {
       .then((response) => response.json())
       .then((json) => {
         dispatch({
-          type: 'contacts/load.success',
+          type: 'contacts/load/success',
           payload: json,
         });
       });
