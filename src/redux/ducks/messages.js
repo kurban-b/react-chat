@@ -1,7 +1,20 @@
-const initialState = {};
+const initialState = {
+  messages: [],
+  loading: false
+};
 
 export default function messages(state = initialState, action) {
   switch (action.type) {
+    case 'messages/load/start':
+      return {
+        ...state,
+        loading: true
+      };
+    case 'messages/load/success':
+      return {
+        ...state,
+        messages: action.payload
+      }
     default:
       return state;
   }
