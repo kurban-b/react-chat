@@ -12,7 +12,7 @@ function Contacts(props) {
 
   return (
     <div className={styles.container}>
-    <MainContacts />
+      <MainContacts />
     </div>
   );
 }
