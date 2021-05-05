@@ -1,0 +1,8 @@
+.btn {
+  height: 100%;
+  width: 10%;
+  border: none;
+  cursor: pointer;
+  background-color: #1851cb;
+  color: white;
+}

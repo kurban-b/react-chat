@@ -1,5 +1,58 @@
 .container {
   background-color: #ffffff;
   width: 55%;
-  padding: 20px 15px;
+  padding: 0 10px;
+}
+
+.header {
+  text-align: center;
+  padding: 15px 5px;
+  height: 10%;
+  border-bottom: 1px solid #dbe4f1;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 80%;
+  padding: 20px 10px;
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+.incoming {
+  width: auto;
+  background-color: #d93b5c;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 auto 10px 0;
+  border-radius: 15px 15px 15px 0;
+  max-width: 90%;
+}
+.outgoing {
+  max-width: 90%;
+  word-break: break-all;
+  border-radius: 15px 15px 0 15px;
+  width: auto;
+  background-color: #3c4fde;
+  color: white;
+  margin: 0 0 10px auto;
+  padding: 10px 15px;
+}
+
+.input__block {
+  height: 10%;
+  padding: 10px 20px;
+  border-top: 1px solid #dbe4f1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input__message {
+  width: 80%;
+  height: 100%;
+  padding: 10px 20px;
+  outline: none;
 }

@@ -2,20 +2,19 @@ import React, { useEffect } from 'react';
 import styles from './chat.module.css';
 import { useDispatch } from 'react-redux';
 import { loadMessages } from '../../redux/ducks/messages';
-import SearchMessages from './SearchMessages';
 import Messages from './Messages';
+import ChatHeader from './Chat-header';
+import InputForMessage from './InputForMessage/Index';
+import { Route } from 'react-router-dom';
 
 function Chat() {
-  const dispatch = useDispatch();
-
-  useEffect(()=>{
-    dispatch(loadMessages())
-  },[])
-
   return (
     <div className={styles.container}>
-      <SearchMessages />
-      <Messages />
+      <Route exact path="/contact/:id?">
+        <ChatHeader />
+        <Messages />
+        <InputForMessage />
+      </Route>
     </div>
   );
 }
