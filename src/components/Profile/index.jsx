@@ -37,7 +37,7 @@ function Profile(props) {
               <i className="fab fa-instagram"></i>
             </div>
             <div className={styles.mediaUsername}>{application.username}</div>
-          </div>gi
+          </div>git
           <div className={styles.media}>
             <div className={styles.mediaImages}>
               <i className="fab fa-twitter"></i>
