@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Avatar(props) {
+function Avatar1(props) {
   return <div></div>;
 }
 
-export default Avatar;
+export default Avatar1;
