@@ -13,9 +13,7 @@ function Contacts(props) {
 
   return (
     <div className={styles.container}>
-      <Route exact path="/contact/:id?">
-        <MainContacts />
-      </Route>
+      <MainContacts />
     </div>
   );
 }

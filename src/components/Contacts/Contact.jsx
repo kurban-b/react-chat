@@ -18,7 +18,7 @@ function Contact(props) {
     >
       <NavLink to={`/contact/${props.contact._id}`}>
         <li>
-          <Avatar conacts={props.contact}/>
+          <Avatar conacts={props.contact} />
           <div className={styles['info_block']}>
             <NameContacts contacts={props.contact} />
             <LastMessages contacts={props.contact} />
