@@ -1,7 +1,7 @@
 const initialState = {
   contacts: [],
   loading: false,
-  filter: ""
+  filter: '',
 };
 
 export default function contacts(state = initialState, action) {
@@ -22,8 +22,8 @@ export default function contacts(state = initialState, action) {
     case 'filter/text':
       return {
         ...state,
-        filter: action.payload
-      }
+        filter: action.payload,
+      };
     default:
       return state;
   }
@@ -46,10 +46,9 @@ export const loadContacts = () => {
   };
 };
 
-
 export const setFilter = (e) => {
-   return {
-     type: 'filter/text',
-     payload: e,
-   }
-}
+  return {
+    type: 'filter/text',
+    payload: e,
+  };
+};

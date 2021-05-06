@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Contact from './Contact';
 import Search from './Search';
-import styles from './contacts.module.css'
+import styles from './contacts.module.css';
 function MainContacts(props) {
   const filter = useSelector((state) => state.contacts.filter);
   const contacts = useSelector((state) => state.contacts.contacts);
