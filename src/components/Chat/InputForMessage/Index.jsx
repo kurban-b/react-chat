@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../chat.module.css';
 import ButtonAddMessage from './Button/Index';
 import { useParams } from 'react-router-dom';
+import AddFile from './AddFile';
 
 function InputForMessage() {
   const [textMessage, setTextMessage] = useState('');
@@ -20,7 +21,11 @@ function InputForMessage() {
         value={textMessage}
         onChange={handleMessageInput}
       />
-      <ButtonAddMessage content={textMessage} idContact={idContact} />
+      <AddFile />
+      <ButtonAddMessage
+        content={textMessage}
+        idContact={idContact}
+      />
     </div>
   );
 }

@@ -30,6 +30,7 @@
   border-radius: 15px 15px 15px 0;
   max-width: 90%;
   display: flex;
+  flex-direction: column;
   position: relative;
 }
 .outgoing {
@@ -42,6 +43,7 @@
   padding: 10px 15px;
   display: flex;
   position: relative;
+  flex-direction: column;
 }
 .outgoing .message {
   margin-right: 10px;
@@ -81,7 +83,9 @@
 .outgoing ul li.dropdownBtn,
 .incoming ul li.dropdownBtn {
   color: #3c3f41;
+  background-color: rgba(226, 226, 226, 0.91);
   display: none;
+  margin: 0 5px;
 }
 .outgoing ul:hover li.dropdownBtn,
 .incoming ul:hover li.dropdownBtn {
@@ -99,7 +103,6 @@
   height: 10%;
   padding: 10px 20px;
   border-top: 1px solid #dbe4f1;
-  display: flex;
   justify-content: space-between;
 }
 
@@ -111,4 +114,26 @@
   outline: none;
   border: none;
   border-bottom: 1px solid rgba(60, 63, 65, 0.24);
+}
+
+.input__file {
+  height: 100%;
+  width: 5%;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #3c3f41;
+}
+.message__time_checked {
+  display: flex;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.message__checked span {
+  font-size: 12px;
+  margin-right: 10px;
+}
+.outgoing .message__time_checked {
+  margin-left: 0;
 }
