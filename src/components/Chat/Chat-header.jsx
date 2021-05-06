@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 function ChatHeader() {
   const contacts = useSelector((state) => state.contacts.contacts);
   const params = useParams().id;
-  console.log(contacts);
 
   return (
     <div className={styles.header}>
