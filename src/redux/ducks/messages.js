@@ -17,7 +17,6 @@ export default function messages(state = initialState, action) {
         messages: action.payload,
         loading: false,
       };
-
     case 'messages/adding/success':
       return {
         ...state,
@@ -81,3 +80,21 @@ export const addingMassage = (myId, contactId, type, content) => {
       });
   };
 };
+
+export const removingMessage = (id) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'messages/remove/start',
+    });
+    fetch('https://api.intocode.ru:8001/api/messages', {
+      method: 'DELETE',
+      body: JSON.stringify({
+        id: id
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+}

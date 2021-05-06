@@ -10,7 +10,7 @@ function Messages() {
   const profile = useSelector((state) => state.application.items);
   const params = useParams().id;
   const dispatch = useDispatch();
-  console.log(123);
+
   useEffect(() => {
     dispatch(loadMessages(params));
   }, [dispatch, params]);

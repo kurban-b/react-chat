@@ -8,6 +8,7 @@ function ButtonAddMessage(props) {
 
   const handleAddingMassage = (myId, contactId, type, message) => {
     dispatch(addingMassage(myId, contactId, type, message));
+    props.setTextMessage('')
   };
   return (
     <button
@@ -16,7 +17,12 @@ function ButtonAddMessage(props) {
         handleAddingMassage('', props.idContact, 'text', props.content);
       }}
     >
-      <span className="material-icons">send</span>
+      {
+        props.content === '' ?
+          <span className="material-icons">mic</span>
+          :
+          <span className="material-icons">send</span>
+      }
     </button>
   );
 }

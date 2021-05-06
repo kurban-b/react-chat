@@ -22,7 +22,11 @@ function InputForMessage() {
         onChange={handleMessageInput}
       />
       <AddFile />
-      <ButtonAddMessage content={textMessage} idContact={idContact} />
+      <ButtonAddMessage
+        content={textMessage}
+        idContact={idContact}
+        setTextMessage={setTextMessage}
+      />
     </div>
   );
 }

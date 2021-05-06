@@ -1,8 +1,15 @@
 import styles from './chat.module.css';
+import { useDispatch } from 'react-redux';
+import { removingMessage } from '../../redux/ducks/messages';
 
 function Message(props) {
+  const dispatch = useDispatch();
   const isUserProfile = props.message.toUserId !== props.profile._id;
   const date = new Date(Date.parse(props.message.time));
+
+  const handleDeleteMassage = (id) => {
+    dispatch(removingMessage(id))
+  }
 
   return (
     <div className={isUserProfile ? styles.outgoing : styles.incoming}>
@@ -27,8 +34,10 @@ function Message(props) {
         <li>
           <span className="material-icons">expand_more</span>
         </li>
-        <li className={styles.dropdownBtn}>
-          <button className={styles.dropdownBtn__btn}>удалить</button>
+        <li className={styles.dropdownBtn} onClick={()=>{
+          handleDeleteMassage(props.message._id)
+        }}>
+          <i className="fas fa-trash-alt"></i>
         </li>
       </ul>
     </div>
