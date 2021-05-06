@@ -3,6 +3,7 @@ import styles from './contacts.module.css';
 import { useDispatch } from 'react-redux';
 import { loadContacts } from '../../redux/ducks/contacts';
 import MainContacts from './MainContacts';
+import { Route } from 'react-router-dom';
 
 function Contacts(props) {
   const dispatch = useDispatch();
@@ -12,7 +13,9 @@ function Contacts(props) {
 
   return (
     <div className={styles.container}>
-      <MainContacts />
+      <Route exact path="/contact/:id?">
+        <MainContacts />
+      </Route>
     </div>
   );
 }
