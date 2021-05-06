@@ -26,11 +26,22 @@ a {
   text-decoration: none;
 }
 
-.selected {
-  color: red;
-}
+
 
 input {
   width: 100%;
   height: 40px;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.messages {
+  font-size: 14px;
+}
+
+.selected {
+  background-color: lavender;
 }
