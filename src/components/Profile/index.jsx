@@ -2,12 +2,6 @@ import React, { useEffect } from 'react';
 import styles from './profile.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadApplicaton } from '../../redux/ducks/application';
-import icon1 from './icons/phone-alt-solid.svg';
-import icon2 from './icons/video-solid.svg';
-import icon3 from './icons/envelope-solid.svg';
-import instagram from './icons/instagram-brands (1).svg';
-import twitter from './icons/twitter-brands.svg';
-import facebook from './icons/facebook-square-brands.svg';
 
 function Profile(props) {
   const dispatch = useDispatch();
@@ -25,13 +19,13 @@ function Profile(props) {
         <div className={styles.username}>@{application.username}</div>
         <div className={styles.icons}>
           <div className={styles.connection}>
-            <img src={icon1} alt="img" />
+            <span className="material-icons">call</span>
           </div>
           <div className={styles.connection}>
-            <img src={icon2} alt="img" />
+            <span className="material-icons">videocam</span>
           </div>
           <div className={styles.connection}>
-            <img src={icon3} alt="img" />
+            <span className="material-icons">email</span>
           </div>
         </div>
       </div>
@@ -40,19 +34,19 @@ function Profile(props) {
         <div className={styles.socialBlock}>
           <div className={styles.media}>
             <div className={styles.mediaImages}>
-              <img src={instagram} alt="instagram" />
+              <i className="fab fa-instagram"></i>
+            </div>
+            <div className={styles.mediaUsername}>{application.username}</div>
+          </div>gi
+          <div className={styles.media}>
+            <div className={styles.mediaImages}>
+              <i className="fab fa-twitter"></i>
             </div>
             <div className={styles.mediaUsername}>{application.username}</div>
           </div>
           <div className={styles.media}>
             <div className={styles.mediaImages}>
-              <img src={twitter} alt="instagram" />
-            </div>
-            <div className={styles.mediaUsername}>{application.username}</div>
-          </div>
-          <div className={styles.media}>
-            <div className={styles.mediaImages}>
-              <img src={facebook} alt="instagram" />
+              <i className="fab fa-facebook-square"></i>
             </div>
             <div className={styles.mediaUsername}>{application.username}</div>
           </div>
