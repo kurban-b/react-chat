@@ -23,26 +23,79 @@
   width: 0;
 }
 .incoming {
-  width: auto;
   background-color: #d93b5c;
   color: white;
   padding: 10px 15px;
-  margin: 0 auto 10px 0;
+  margin: 0 auto 20px 0;
   border-radius: 15px 15px 15px 0;
   max-width: 90%;
+  display: flex;
+  position: relative;
 }
 .outgoing {
   max-width: 90%;
   word-break: break-all;
   border-radius: 15px 15px 0 15px;
-  width: auto;
   background-color: #3c4fde;
   color: white;
-  margin: 0 0 10px auto;
+  margin: 0 0 20px auto;
   padding: 10px 15px;
+  display: flex;
+  position: relative;
+}
+.outgoing .message {
+  margin-right: 10px;
+}
+.incoming .message {
+  margin-left: 10px;
+}
+.outgoing ul,
+.incoming ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.outgoing ul li,
+.incoming ul li {
+  padding: 0;
+  margin: 0;
+}
+.incoming ul {
+  position: absolute;
+  left: 0;
+  color: white;
+  display: none;
+}
+.outgoing ul {
+  display: none;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  color: white;
+}
+.outgoing:hover ul,
+.incoming:hover ul {
+  display: block;
+}
+
+.outgoing ul li.dropdownBtn,
+.incoming ul li.dropdownBtn {
+  color: #3c3f41;
+  display: none;
+}
+.outgoing ul:hover li.dropdownBtn,
+.incoming ul:hover li.dropdownBtn {
+  display: block;
+}
+.dropdownBtn__btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .input__block {
+  display: flex;
   height: 10%;
   padding: 10px 20px;
   border-top: 1px solid #dbe4f1;
@@ -51,8 +104,11 @@
 }
 
 .input__message {
-  width: 80%;
+  flex: 1;
+  margin-right: 20px;
   height: 100%;
   padding: 10px 20px;
   outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(60, 63, 65, 0.24);
 }

@@ -13,14 +13,14 @@ function Messages(props) {
   useEffect(() => {
     dispatch(loadMessages(params));
   }, [params]);
-  if (params)
-    return (
-      <div className={styles.messages}>
-        {messages.map((message) => {
-          return <Message message={message} key={message.id} />;
-        })}
-      </div>
-    );
+
+  return (
+    <div className={styles.messages}>
+      {messages.map((message) => {
+        return <Message message={message} key={message.id} />;
+      })}
+    </div>
+  );
 }
 
 export default Messages;

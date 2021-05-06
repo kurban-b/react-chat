@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './chat.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loadMessages } from '../../redux/ducks/messages';
 import Messages from './Messages';
 import ChatHeader from './Chat-header';
