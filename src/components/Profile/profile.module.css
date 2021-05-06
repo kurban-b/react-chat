@@ -2,3 +2,81 @@
   width: 20%;
   padding: 20px 15px;
 }
+.info {
+  margin: auto;
+  width: 60%;
+  padding-top: 20px;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  background-color: grey;
+  border-radius: 30px;
+}
+.name {
+  padding-top: 20px;
+}
+.username {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 5px;
+  color: grey;
+}
+.icons {
+  margin: auto;
+  width: 80%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.connection {
+  width: 10px;
+}
+.social {
+  width: 95%;
+  margin: auto;
+  height: 100px;
+  margin-top: 50px;
+}
+.socialBlock {
+  width: 100%;
+  background-color: white;
+  margin-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  border-radius: 2px;
+  margin-bottom: 40px;
+}
+.media {
+  display: flex;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.mediaImages {
+  width: 15px;
+  display: flex;
+  align-items: center;
+}
+.mediaUsername {
+  padding-left: 5px;
+  font-size: 14px;
+}
+.mediaBlock {
+  width: 100%;
+  background-color: white;
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.desktop {
+  width: 40px;
+  height: 40px;
+  background-color: #c1d5ff;
+  border-radius: 5px;
+}
+.desktopText {
+  padding-left: 5px;
+  font-size: 14px;
+}
