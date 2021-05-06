@@ -7,9 +7,10 @@ import { loadMessages } from '../../redux/ducks/messages';
 
 function Messages() {
   const messages = useSelector((state) => state.messages.messages);
+  const profile = useSelector((state) => state.application.items);
   const params = useParams().id;
   const dispatch = useDispatch();
-
+  console.log(123);
   useEffect(() => {
     dispatch(loadMessages(params));
   }, [dispatch, params]);
@@ -17,7 +18,7 @@ function Messages() {
   return (
     <div className={styles.messages}>
       {messages.map((message, i) => {
-        return <Message message={message} key={i} />;
+        return <Message message={message} key={i} profile={profile} />;
       })}
     </div>
   );
