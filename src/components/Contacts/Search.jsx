@@ -9,6 +9,10 @@ function Search(props) {
     dispatch(setFilter(e.target.value));
   };
 
+  const handleReset = () => {
+    dispatch(setFilter(''))
+  }
+
   return (
     <div>
       <input
@@ -17,6 +21,10 @@ function Search(props) {
         onChange={(e) => handleChange(e)}
         className={styles.input}
       />
+      <button
+        className={styles.reset}
+        onClick={handleReset}
+      >Х</button>
     </div>
   );
 }

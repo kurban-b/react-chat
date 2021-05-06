@@ -35,9 +35,22 @@ a {
 
 .input {
   width: 25%;
-  height: 50px;
+  height: 40px;
   position: fixed;
   top: 0;
+  z-index: 999;
+  outline: none;
+}
+
+.reset {
+  z-index: 1000;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .name {
