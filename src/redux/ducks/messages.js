@@ -43,7 +43,6 @@ export const loadMessages = (id) => {
     )
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         dispatch({
           type: 'messages/load/success',
           payload: json,

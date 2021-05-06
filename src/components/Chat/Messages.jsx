@@ -5,19 +5,19 @@ import styles from './chat.module.css';
 import { useParams } from 'react-router-dom';
 import { loadMessages } from '../../redux/ducks/messages';
 
-function Messages(props) {
+function Messages() {
   const messages = useSelector((state) => state.messages.messages);
   const params = useParams().id;
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadMessages(params));
-  }, [params]);
+  }, [dispatch, params]);
 
   return (
     <div className={styles.messages}>
-      {messages.map((message) => {
-        return <Message message={message} key={message.id} />;
+      {messages.map((message, i) => {
+        return <Message message={message} key={i} />;
       })}
     </div>
   );
