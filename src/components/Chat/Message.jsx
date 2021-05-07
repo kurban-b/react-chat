@@ -11,6 +11,14 @@ function Message(props) {
     dispatch(removingMessage(id))
   }
 
+  if (props.message.type === 'info'){
+    return (
+      <div className={styles.message__info}>
+        {props.message.content}
+      </div>
+    )
+  }
+
   return (
     <div className={isUserProfile ? styles.outgoing : styles.incoming}>
       <div className={styles.message}>{props.message.content}</div>
