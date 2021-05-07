@@ -22,18 +22,17 @@ export default function application(state = initialState, action) {
       return {
         ...state,
         darkTheme: !state.darkTheme,
-      }
+      };
     default:
       return state;
   }
 }
 
 export const toggleTheme = () => {
-  return ({
+  return {
     type: 'application/darkTheme/toogle',
-  })
-}
-
+  };
+};
 
 export const loadApplicaton = () => {
   return (dispatch) => {

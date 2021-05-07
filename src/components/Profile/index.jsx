@@ -5,7 +5,7 @@ import { loadApplicaton } from '../../redux/ducks/application';
 
 function Profile(props) {
   const dispatch = useDispatch();
-  const darkTheme = useSelector(state => state.application.darkTheme)
+  const darkTheme = useSelector((state) => state.application.darkTheme);
   const application = useSelector((state) => state.application.items);
 
   useEffect(() => {
@@ -32,7 +32,9 @@ function Profile(props) {
       </div>
       <div className={styles.social}>
         <div>Social</div>
-        <div className={darkTheme ? styles.socialBlock_dark : styles.socialBlock}>
+        <div
+          className={darkTheme ? styles.socialBlock_dark : styles.socialBlock}
+        >
           <div className={styles.media}>
             <div className={styles.mediaImages}>
               <i className="fab fa-instagram"></i>
