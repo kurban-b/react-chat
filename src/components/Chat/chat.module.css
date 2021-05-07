@@ -1,6 +1,10 @@
 .container {
-  background: rgb(254,254,254);
-  background: radial-gradient(circle, rgba(254,254,254,1) 39%, rgba(243, 250, 255, 0.8) 100%);
+  background: rgb(254, 254, 254);
+  background: radial-gradient(
+    circle,
+    rgba(254, 254, 254, 1) 39%,
+    rgba(243, 250, 255, 0.8) 100%
+  );
   width: 55%;
   padding: 0 10px;
 }
@@ -172,6 +176,7 @@
 .header_search__block {
   display: flex;
   align-items: center;
+  width: 200px;
 }
 .header_search__block input {
   outline: none;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './chat.module.css';
-import Messages from './Messages';
-import ChatHeader from './Chat-header';
+import Messages from './Messages/Index';
+import ChatHeader from './Header/Index';
 import InputForMessage from './InputForMessage/Index';
 import { Route } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './chat.module.css';
+import styles from '../chat.module.css';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import SearchMessage from './SearchMessage';
