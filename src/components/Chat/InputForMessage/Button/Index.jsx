@@ -1,24 +1,42 @@
 import React from 'react';
 import styles from './button.module.css';
-import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { addingMassage } from '../../../../redux/ducks/messages';
 
-function ButtonAddMessage(props) {
+function ButtonAddMessage({ content, idContact, setTextMessage }) {
   const dispatch = useDispatch();
+  const profileId = useSelector((state) => state.application.items._id);
+  const loadingAddMessage = useSelector(
+    (state) => state.messages.loadingMessage,
+  );
 
   const handleAddingMassage = (myId, contactId, type, message) => {
     dispatch(addingMassage(myId, contactId, type, message));
+    setTextMessage('');
   };
+
   return (
     <button
+      disabled={content === '' || loadingAddMessage}
       className={styles.btn}
       onClick={() => {
-        handleAddingMassage('', props.idContact, 'text', props.content);
+        handleAddingMassage(profileId, idContact, 'text', content);
       }}
     >
-      <span className="material-icons">send</span>
+      {content === '' ? (
+        <span className="material-icons">mic</span>
+      ) : (
+        <span className="material-icons">send</span>
+      )}
     </button>
   );
 }
+
+ButtonAddMessage.propTypes = {
+  content: PropTypes.string,
+  idContact: PropTypes.string,
+  setTextMessage: PropTypes.func,
+};
 
 export default ButtonAddMessage;

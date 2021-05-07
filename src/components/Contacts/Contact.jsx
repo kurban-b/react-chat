@@ -4,19 +4,23 @@ import { NavLink, useParams } from 'react-router-dom';
 import LastMessages from './LastMessages';
 import NameContacts from './NameContacts';
 import Avatar from './Avatar';
+import { useSelector } from 'react-redux';
 
 function Contact(props) {
-  const params = useParams().id;
-
+  const darkTheme = useSelector((state) => state.application.darkTheme);
+  const id = useSelector((state) => state.messages.activeContactId);
   return (
     <div
       className={
-        params === props.contact._id
+        id === props.contact._id
           ? `${styles.selected} ${styles.contacts}`
           : styles.contacts
       }
     >
-      <NavLink to={`/contact/${props.contact._id}`}>
+      <NavLink
+        className={darkTheme ? styles.link_dark : ''}
+        to={`/contact/${props.contact._id}`}
+      >
         <li>
           <Avatar conacts={props.contact} />
           <div className={styles['info_block']}>

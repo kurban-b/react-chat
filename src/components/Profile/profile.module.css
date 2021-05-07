@@ -2,6 +2,7 @@
   width: 20%;
   padding: 20px 15px;
 }
+
 .info {
   margin: auto;
   width: 60%;
@@ -80,3 +81,31 @@
   padding-left: 5px;
   font-size: 14px;
 }
+
+/*** Стили для темной темы ***/
+
+.container_dark {
+  background-color: #2d2d2d;
+  color: white;
+  width: 20%;
+  padding: 20px 15px;
+}
+.mediaBlock_dark {
+  width: 100%;
+  background-color: #474747;
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.socialBlock_dark {
+  width: 100%;
+  background-color: #474747;
+  margin-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  border-radius: 2px;
+  margin-bottom: 40px;
+}
+
+/*** конец стилей для темной темы ***/

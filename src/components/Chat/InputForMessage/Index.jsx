@@ -3,6 +3,7 @@ import styles from '../chat.module.css';
 import ButtonAddMessage from './Button/Index';
 import { useParams } from 'react-router-dom';
 import AddFile from './AddFile';
+import InputMassage from './InputMassage';
 
 function InputForMessage() {
   const [textMessage, setTextMessage] = useState('');
@@ -14,15 +15,13 @@ function InputForMessage() {
 
   return (
     <div className={styles.input__block}>
-      <input
-        type="text"
-        className={styles.input__message}
-        placeholder="Введите сообщение"
-        value={textMessage}
-        onChange={handleMessageInput}
-      />
+      <InputMassage text={textMessage} handleChange={handleMessageInput} />
       <AddFile />
-      <ButtonAddMessage content={textMessage} idContact={idContact} />
+      <ButtonAddMessage
+        content={textMessage}
+        idContact={idContact}
+        setTextMessage={setTextMessage}
+      />
     </div>
   );
 }

@@ -1,13 +1,12 @@
 .container {
   width: 25%;
   box-sizing: border-box;
-
   background-color: #eeeeee;
   position: relative;
 }
 
 .contacts {
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.42);
 }
 
 ul {
@@ -112,4 +111,22 @@ a {
 .info_block {
   margin-left: 20px;
   margin-top: 5px;
+  max-width: 220px; /*** добавил от себя свойство @Курбан ***/
 }
+
+/*** стили для темной темы ***/
+.container_dark {
+  width: 25%;
+  box-sizing: border-box;
+  background-color: #2d2d2d;
+  position: relative;
+  color: white;
+}
+.contacts_dark {
+  border-bottom: 1px solid #454545;
+}
+a.link_dark {
+  color: #ffffff;
+  text-decoration: none;
+}
+/*** конец стилей для темной темы ***/

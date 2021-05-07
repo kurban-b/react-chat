@@ -5,6 +5,7 @@ import { loadApplicaton } from '../../redux/ducks/application';
 
 function Profile(props) {
   const dispatch = useDispatch();
+  const darkTheme = useSelector((state) => state.application.darkTheme);
   const application = useSelector((state) => state.application.items);
 
   useEffect(() => {
@@ -12,7 +13,7 @@ function Profile(props) {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={darkTheme ? styles.container_dark : styles.container}>
       <div className={styles.info}>
         <div className={styles.icon} />
         <div className={styles.name}>{application.fullname}</div>
@@ -31,7 +32,9 @@ function Profile(props) {
       </div>
       <div className={styles.social}>
         <div>Social</div>
-        <div className={styles.socialBlock}>
+        <div
+          className={darkTheme ? styles.socialBlock_dark : styles.socialBlock}
+        >
           <div className={styles.media}>
             <div className={styles.mediaImages}>
               <i className="fab fa-instagram"></i>
@@ -52,7 +55,7 @@ function Profile(props) {
           </div>
         </div>
         <div>Media</div>
-        <div className={styles.mediaBlock}>
+        <div className={darkTheme ? styles.mediaBlock_dark : styles.mediaBlock}>
           <div className={styles.desktop}></div>
           <div className={styles.desktopText}>desktop-chat.pdf</div>
         </div>

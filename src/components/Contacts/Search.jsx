@@ -10,8 +10,8 @@ function Search(props) {
   };
 
   const handleReset = () => {
-    dispatch(setFilter(''))
-  }
+    dispatch(setFilter(''));
+  };
 
   return (
     <div>
@@ -21,10 +21,9 @@ function Search(props) {
         onChange={(e) => handleChange(e)}
         className={styles.input}
       />
-      <button
-        className={styles.reset}
-        onClick={handleReset}
-      >Х</button>
+      <button className={styles.reset} onClick={handleReset}>
+        Х
+      </button>
     </div>
   );
 }
