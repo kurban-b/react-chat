@@ -19,6 +19,10 @@ export default function messages(state = initialState, action) {
         activeContactId: action.id,
         loading: false,
       };
+    case 'messages/adding/start':
+      return {
+        ...state,
+      };
     case 'messages/adding/success':
       return {
         ...state,
@@ -28,6 +32,11 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         filter: action.payload,
+      };
+    case 'messages/search/reset':
+      return {
+        ...state,
+        filter: '',
       };
     default:
       return state;
@@ -43,8 +52,15 @@ export const setFilterMessage = (value) => {
   };
 };
 
+export const resetFilterMessage = () => {
+  return {
+    type: 'messages/search/reset',
+  };
+};
+
 // тут санки
 
+// Санк для подгрузки сообщений
 export const loadMessages = (id) => {
   return (dispatch) => {
     dispatch({
@@ -68,10 +84,12 @@ export const loadMessages = (id) => {
   };
 };
 
+// Санк для добавления сообщения
 export const addingMassage = (myId, contactId, type, content) => {
   return (dispatch) => {
     dispatch({
       type: 'messages/adding/start',
+      payload: { myId, contactId, type, content },
     });
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
@@ -96,6 +114,7 @@ export const addingMassage = (myId, contactId, type, content) => {
   };
 };
 
+// Санк для удаления сообщения
 export const removingMessage = (id) => {
   return (dispatch) => {
     dispatch({

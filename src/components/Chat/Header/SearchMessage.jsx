@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import styles from '../chat.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilterMessage } from '../../../redux/ducks/messages';
+import {
+  resetFilterMessage,
+  setFilterMessage,
+} from '../../../redux/ducks/messages';
 
 function SearchMessage() {
   const dispatch = useDispatch();
@@ -10,6 +13,10 @@ function SearchMessage() {
 
   const handleSearch = (e) => {
     dispatch(setFilterMessage(e.target.value));
+  };
+
+  const handleResetSearch = () => {
+    dispatch(resetFilterMessage());
   };
 
   const handleToggleStateActive = () => {
@@ -22,12 +29,17 @@ function SearchMessage() {
         search
       </button>
       {isSearchIsActive ? (
-        <input
-          type="text"
-          placeholder="поиск"
-          value={filter}
-          onChange={handleSearch}
-        />
+        <>
+          <input
+            type="text"
+            placeholder="поиск"
+            value={filter}
+            onChange={handleSearch}
+          />
+          <button className="material-icons" onClick={handleResetSearch}>
+            clear
+          </button>
+        </>
       ) : (
         ''
       )}

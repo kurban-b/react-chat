@@ -1,14 +1,19 @@
 import React from 'react';
 import styles from '../chat.module.css';
 import PropTypes from 'prop-types';
+import moment from 'moment';
+import 'moment/locale/ru';
 
-function MessageTime({ hours, minuts }) {
-  return <div className={styles.message__time}>{`${hours}:${minuts}`}</div>;
+function MessageTime({ date }) {
+  return (
+    <div className={styles.message__time}>
+      {moment(date).locale('ru').format('LT')}
+    </div>
+  );
 }
 
 MessageTime.propTypes = {
-  hours: PropTypes.number,
-  minuts: PropTypes.number,
+  date: PropTypes.string,
 };
 
 export default MessageTime;

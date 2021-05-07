@@ -112,4 +112,5 @@ a {
 .info_block {
   margin-left: 20px;
   margin-top: 5px;
+  max-width: 220px; /*** добавил от себя свойство @Курбан ***/
 }

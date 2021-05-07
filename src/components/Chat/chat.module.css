@@ -8,7 +8,18 @@
   width: 55%;
   padding: 0 10px;
 }
-
+.start_page {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start_page h3 {
+  background-color: rgba(232, 232, 232, 0.65);
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #3c3f41;
+}
 .header {
   text-align: center;
   padding: 15px 5px;
@@ -106,7 +117,7 @@
 .outgoing ul li.dropdownBtn,
 .incoming ul li.dropdownBtn {
   display: none;
-  margin: 0 2px;
+  margin: 3px 0px 0 5px;
 }
 .outgoing ul:hover li.dropdownBtn,
 .incoming ul:hover li.dropdownBtn {
