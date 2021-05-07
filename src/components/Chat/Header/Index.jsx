@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import SearchMessage from './SearchMessage';
 import Toggle from './Toggle';
+import ToogleTheme from './ToogleTheme';
 
 function ChatHeader() {
   const contacts = useSelector((state) => state.contacts.contacts);
@@ -28,15 +29,16 @@ function ChatHeader() {
       <div className={styles.header_name__block}>
         {contacts.length === 0 ? (
           ''
-        ) : contact.online ? (
+        ) : contact.online && contact.online !== undefined ? (
           <>
             {contact.fullname}
-            <div className={styles.header_name__online}></div>
+            <div className={styles.header_name__online}/>
           </>
         ) : (
           contact.fullname
         )}
       </div>
+      <ToogleTheme />
       <Toggle />
     </div>
   );

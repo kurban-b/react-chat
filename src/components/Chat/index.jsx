@@ -3,20 +3,24 @@ import styles from './chat.module.css';
 import Messages from './Messages/Index';
 import ChatHeader from './Header/Index';
 import InputForMessage from './InputForMessage/Index';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import StartPage from './StartPage';
+import { useSelector } from 'react-redux';
 
 function Chat() {
+  const darkTheme = useSelector(state => state.application.darkTheme)
   return (
-    <div className={styles.container}>
-      <Route exact path="/">
-        <StartPage />
-      </Route>
-      <Route exact path="/contact/:id?">
-        <ChatHeader />
-        <Messages />
-        <InputForMessage />
-      </Route>
+    <div className={darkTheme ? styles.container_dark : styles.container}>
+      <Switch>
+        <Route exact path="/contact/:id?">
+          <ChatHeader />
+          <Messages />
+          <InputForMessage />
+        </Route>
+        <Route>
+          <StartPage />
+        </Route>
+      </Switch>
     </div>
   );
 }

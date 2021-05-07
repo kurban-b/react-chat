@@ -1,6 +1,7 @@
 const initialState = {
   items: [],
   loading: true,
+  darkTheme: false,
 };
 
 export default function application(state = initialState, action) {
@@ -17,11 +18,22 @@ export default function application(state = initialState, action) {
         items: action.payload,
         loading: false,
       };
-
+    case 'application/darkTheme/toogle':
+      return {
+        ...state,
+        darkTheme: !state.darkTheme,
+      }
     default:
       return state;
   }
 }
+
+export const toggleTheme = () => {
+  return ({
+    type: 'application/darkTheme/toogle',
+  })
+}
+
 
 export const loadApplicaton = () => {
   return (dispatch) => {
