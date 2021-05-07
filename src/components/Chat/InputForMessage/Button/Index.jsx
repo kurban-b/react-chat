@@ -7,6 +7,8 @@ import { addingMassage } from '../../../../redux/ducks/messages';
 function ButtonAddMessage({ content, idContact, setTextMessage }) {
   const dispatch = useDispatch();
   const profileId = useSelector((state) => state.application.items._id);
+  const loadingAddMessage = useSelector(state => state.messages.loadingMessage);
+
 
   const handleAddingMassage = (myId, contactId, type, message) => {
     dispatch(addingMassage(myId, contactId, type, message));
@@ -15,6 +17,7 @@ function ButtonAddMessage({ content, idContact, setTextMessage }) {
 
   return (
     <button
+      disabled={content === '' || loadingAddMessage}
       className={styles.btn}
       onClick={() => {
         handleAddingMassage(profileId, idContact, 'text', content);

@@ -1,6 +1,7 @@
 const initialState = {
   messages: [],
   loading: false,
+  LoadingMessage: false,
   filter: '',
 };
 
@@ -22,11 +23,13 @@ export default function messages(state = initialState, action) {
     case 'messages/adding/start':
       return {
         ...state,
+        loadingMessage: true,
       };
     case 'messages/adding/success':
       return {
         ...state,
         messages: [...state.messages, action.payload],
+        loadingMessage: false,
       };
     case 'messages/search/filtered':
       return {
