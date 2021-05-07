@@ -32,7 +32,7 @@ function ChatHeader() {
         ) : contact.online && contact.online !== undefined ? (
           <>
             {contact.fullname}
-            <div className={styles.header_name__online}/>
+            <div className={styles.header_name__online} />
           </>
         ) : (
           contact.fullname
