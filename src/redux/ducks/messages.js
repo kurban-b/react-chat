@@ -1,3 +1,5 @@
+import { scrollMessages } from '../../addition';
+
 const initialState = {
   messages: [],
   loading: false,
@@ -24,11 +26,23 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loadingMessage: true,
+        messages: [
+          ...state.messages,
+          {...action.payload, sending:true}
+        ]
       };
     case 'messages/adding/success':
       return {
         ...state,
-        messages: [...state.messages, action.payload],
+        messages: state.messages.map(message => {
+          if (message.tempId === action.payload.tempId) {
+            return {
+              ...action.payload,
+              sending: false
+            }
+          }
+          return message
+        }),
         loadingMessage: false,
       };
     case 'messages/search/filtered':
@@ -69,7 +83,6 @@ export const loadMessages = (id) => {
     dispatch({
       type: 'messages/load/start',
     });
-
     fetch(
       `https://api.intocode.ru:8001/api/messages/5f2ea3801f986a01cefc8bcd/${id}`,
     )
@@ -80,19 +93,22 @@ export const loadMessages = (id) => {
           payload: json,
           id: id,
         });
+        scrollMessages();
       })
       .catch((error) => {
         console.error(error);
       });
+
   };
 };
 
 // Санк для добавления сообщения
 export const addingMassage = (myId, contactId, type, content) => {
+  const tempId = Math.random();
   return (dispatch) => {
     dispatch({
       type: 'messages/adding/start',
-      payload: { myId, contactId, type, content },
+      payload: { myId, contactId, type, content, tempId: tempId },
     });
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
@@ -108,12 +124,14 @@ export const addingMassage = (myId, contactId, type, content) => {
       .then((json) => {
         dispatch({
           type: 'messages/adding/success',
-          payload: json,
+          payload: {...json, tempId: tempId}
         });
+        scrollMessages();
       })
       .catch((error) => {
         console.error(error);
       });
+
   };
 };
 

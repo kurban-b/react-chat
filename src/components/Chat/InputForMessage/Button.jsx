@@ -1,12 +1,13 @@
 import React from 'react';
-import styles from './button.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { addingMassage } from '../../../../redux/ducks/messages';
+import { addingMassage } from '../../../redux/ducks/messages';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function ButtonAddMessage({ content, idContact, setTextMessage }) {
   const dispatch = useDispatch();
   const profileId = useSelector((state) => state.application.items._id);
+  const stateBTN = content === '';
   const loadingAddMessage = useSelector(
     (state) => state.messages.loadingMessage,
   );
@@ -17,19 +18,24 @@ function ButtonAddMessage({ content, idContact, setTextMessage }) {
   };
 
   return (
-    <button
-      disabled={content === '' || loadingAddMessage}
-      className={styles.btn}
-      onClick={() => {
-        handleAddingMassage(profileId, idContact, 'text', content);
-      }}
-    >
-      {content === '' ? (
-        <span className="material-icons">mic</span>
-      ) : (
-        <span className="material-icons">send</span>
-      )}
-    </button>
+    <TransitionGroup>
+      <CSSTransition in={stateBTN} className="input_btn" timeout={100}>
+        {stateBTN ? (
+          <button>
+            <span className="material-icons">mic</span>
+          </button>
+        ) : (
+          <button
+            disabled={loadingAddMessage}
+            onClick={() => {
+              handleAddingMassage(profileId, idContact, 'text', content);
+            }}
+          >
+            <span className="material-icons">send</span>
+          </button>
+        )}
+      </CSSTransition>
+    </TransitionGroup>
   );
 }
 

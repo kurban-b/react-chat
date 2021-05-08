@@ -25,8 +25,9 @@ function Messages() {
   useEffect(() => {
     dispatch(loadMessages(params));
   }, [dispatch, params]);
+
   return (
-    <div className={styles.messages}>
+    <div className={styles.messages} id='messages-block'>
       {filtered.map((message, index) => {
         return (
           <Message message={message} profileId={profile._id} key={index} />

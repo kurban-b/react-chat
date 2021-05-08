@@ -17,7 +17,7 @@ function Message({ message, profileId }) {
     <div className={isUserProfile ? styles.outgoing : styles.incoming}>
       <div className={styles.message}>{message.content}</div>
       <div className={styles.message__time_checked}>
-        <MessageReadChecked read={message.read} isUserProfile={isUserProfile} />
+        <MessageReadChecked message={message} isUserProfile={isUserProfile} />
         <MessageTime date={message.time} />
       </div>
       <MessageDropdown id={message._id} />

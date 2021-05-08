@@ -246,3 +246,22 @@
   color: #717374;
   font-size: 20px;
 }
+.input__block button {
+  background-color: rgba(224, 224, 224, 0.77);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #3c3f41;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: 100ms;
+}
+.input__block button:hover {
+  transform: scale(1.1);
+}
+/** CSS transition **/
