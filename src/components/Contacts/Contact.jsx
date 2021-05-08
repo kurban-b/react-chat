@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './contacts.module.css';
 import { NavLink, useParams } from 'react-router-dom';
-import LastMessages from './LastMessages';
+import LastMessages from './Info/LastMessages';
 import NameContacts from './NameContacts';
 import Avatar from './Avatar';
 import { useSelector } from 'react-redux';
+import Time from './Info/Time';
 
 function Contact(props) {
   const darkTheme = useSelector((state) => state.application.darkTheme);
   const id = useSelector((state) => state.messages.activeContactId);
+  //Активный чат (выделенный бэкграунд)
   return (
     <div
       className={
@@ -26,6 +28,9 @@ function Contact(props) {
           <div className={styles['info_block']}>
             <NameContacts contacts={props.contact} />
             <LastMessages contacts={props.contact} />
+          </div>
+          <div className={styles.time}>
+            <Time contacts={props.contact} />
           </div>
         </li>
       </NavLink>
