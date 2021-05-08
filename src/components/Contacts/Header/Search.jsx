@@ -10,7 +10,6 @@ function Search(props) {
     dispatch(setFilter(e.target.value));
   };
 
-
   return (
     <div>
       <input
@@ -18,7 +17,9 @@ function Search(props) {
         value={filter}
         onChange={(e) => handleChange(e)}
         className={styles.input}
+        placeholder="Write name"
       />
+
       <Reset />
     </div>
   );

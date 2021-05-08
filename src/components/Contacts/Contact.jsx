@@ -7,8 +7,6 @@ import Avatar from './Avatar';
 import { useSelector } from 'react-redux';
 import Time from './Info/Time';
 
-
-
 function Contact(props) {
   const darkTheme = useSelector((state) => state.application.darkTheme);
   const id = useSelector((state) => state.messages.activeContactId);
@@ -31,9 +29,9 @@ function Contact(props) {
             <NameContacts contacts={props.contact} />
             <LastMessages contacts={props.contact} />
           </div>
-            <div className={styles.time}>
-              <Time contacts={props.contact} />
-            </div>
+          <div className={styles.time}>
+            <Time contacts={props.contact} />
+          </div>
         </li>
       </NavLink>
     </div>
