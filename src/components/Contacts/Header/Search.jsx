@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from '../../redux/ducks/contacts';
-import styles from './contacts.module.css';
+import { setFilter } from '../../../redux/ducks/contacts';
+import styles from '../contacts.module.css';
+import Reset from './Reset';
 function Search(props) {
   const filter = useSelector((state) => state.contacts.filter);
   const dispatch = useDispatch();
@@ -9,9 +10,6 @@ function Search(props) {
     dispatch(setFilter(e.target.value));
   };
 
-  const handleReset = () => {
-    dispatch(setFilter(''));
-  };
 
   return (
     <div>
@@ -21,9 +19,7 @@ function Search(props) {
         onChange={(e) => handleChange(e)}
         className={styles.input}
       />
-      <button className={styles.reset} onClick={handleReset}>
-        Х
-      </button>
+      <Reset />
     </div>
   );
 }
