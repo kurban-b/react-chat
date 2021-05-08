@@ -33,23 +33,28 @@ a {
 }
 
 .input {
-  width: 25%;
-  height: 40px;
+  width: 24%;
+  height: 45px;
   position: fixed;
-  top: 0;
+  top: 8px;
+  left: 10px;
   z-index: 999;
   outline: none;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
 }
 
 .reset {
   z-index: 1000;
   position: absolute;
-  right: 0;
-  top: 10px;
+  right: 10px;
+  top: 20px;
   font-size: 18px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  opacity: 0.5;
 }
 
 .name {
@@ -59,7 +64,6 @@ a {
 
 .messages {
   font-size: 14px;
-
   font-weight: 300;
 }
 
@@ -67,6 +71,11 @@ a {
   background-color: #3c4fde;
   width: 100%;
   color: white;
+  border-radius: 15px;
+}
+.selected ul {
+  color: red;
+  border: none;
 }
 
 .selected a {
@@ -109,9 +118,16 @@ a {
 }
 
 .info_block {
+  position: relative;
   margin-left: 20px;
   margin-top: 5px;
   max-width: 220px; /*** добавил от себя свойство @Курбан ***/
+}
+
+.time {
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
 }
 
 /*** стили для темной темы ***/
