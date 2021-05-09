@@ -22,7 +22,6 @@ li {
   position: relative;
   cursor: pointer;
   display: flex;
-
 }
 
 p {
@@ -74,7 +73,7 @@ a {
   width: 100%;
   color: white;
   border-radius: 15px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .selected a {
@@ -146,59 +145,55 @@ a.link_dark {
 }
 /*** конец стилей для темной темы ***/
 
-
 /*CТИЛИ ДЛЯ ПРЕЛОАДЕРА*/
 
 .preloader_name {
   display: block;
   padding-left: 300px;
   box-sizing: border-box;
-  margin-bottom: 77px;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .preloader_circle {
-  margin-bottom: 50px;
 }
 
 .preloader_div {
-  margin-top: 10px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
-
-
-
-@media only screen and (max-width: 1920px){
+@media only screen and (max-width: 1920px) {
   .preloader_name {
-   padding-left: 300px;
+    padding-left: 300px;
   }
 
   .preloader_div {
-
   }
 }
 
-@media only screen and (max-width: 1600px){
+@media only screen and (max-width: 1600px) {
   .preloader_name {
     padding-left: 260px;
   }
 }
 
-@media only screen and (max-width: 1500px){
+@media only screen and (max-width: 1500px) {
   .preloader_name {
     padding-left: 230px;
   }
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1200px) {
+  input {
+    margin-left: -5px;
+  }
+
   .preloader_div {
     margin-left: 10px;
   }
   .preloader_name {
     padding-left: 190px;
   }
-
 }
-

@@ -7,24 +7,22 @@ import Preloader from './Preloader';
 function MainContacts(props) {
   const filter = useSelector((state) => state.contacts.filter);
   const contacts = useSelector((state) => state.contacts.contacts);
-  const loading = useSelector(state => state.contacts.loading);
+  const loading = useSelector((state) => state.contacts.loading);
   //Фильтрация контактов по имени
   const filtered = contacts.filter(
     (contact) => contact.fullname.indexOf(filter) > -1,
   );
-  return (
-    loading ? (
-      <Preloader />
-    ) : (
-      <div className={styles.main_contact}>
-        <Search />
-        <ul>
-          {filtered.map((contact) => {
-            return <Contact contact={contact} key={contact._id} />;
-          })}
-        </ul>
-      </div>
-    )
+  return loading ? (
+    <Preloader />
+  ) : (
+    <div className={styles.main_contact}>
+      <Search />
+      <ul>
+        {filtered.map((contact) => {
+          return <Contact contact={contact} key={contact._id} />;
+        })}
+      </ul>
+    </div>
   );
 }
 
