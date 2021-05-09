@@ -35,11 +35,10 @@ export default function application(state = initialState, action) {
 }
 
 export const toggleTheme = () => {
-  return ({
+  return {
     type: 'application/darkTheme/toogle',
-  })
-}
-
+  };
+};
 
 export const loadApplicaton = () => {
   return (dispatch) => {

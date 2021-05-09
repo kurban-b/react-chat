@@ -6,7 +6,7 @@ import MainContacts from './MainContacts';
 
 function Contacts(props) {
   const dispatch = useDispatch();
-  const darkTheme = useSelector(state => state.application.darkTheme)
+  const darkTheme = useSelector((state) => state.application.darkTheme);
   useEffect(() => {
     dispatch(loadContacts());
   }, [dispatch]);

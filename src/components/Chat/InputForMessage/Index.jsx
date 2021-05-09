@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../chat.module.css';
-import ButtonAddMessage from './Button/Index';
+import ButtonAddMessage from './Button';
 import { useParams } from 'react-router-dom';
 import AddFile from './AddFile';
 import InputMassage from './InputMassage';
