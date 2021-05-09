@@ -38,8 +38,10 @@ function ChatHeader() {
           contact.fullname
         )}
       </div>
-      <ToogleTheme />
-      <Toggle />
+      <div className={styles.toogls}>
+        <ToogleTheme />
+        <Toggle />
+      </div>
     </div>
   );
 }

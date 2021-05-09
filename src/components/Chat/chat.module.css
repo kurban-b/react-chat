@@ -22,7 +22,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .start_page h3 {
   background-color: rgba(232, 232, 232, 0.65);
@@ -31,12 +31,13 @@
   color: #3c3f41;
 }
 .header {
+  position: relative;
   text-align: center;
   padding: 15px 5px;
   height: 10%;
   border-bottom: 1px solid #dbe4f1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .header__loading {
@@ -197,7 +198,7 @@
 .header_search__block {
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 30%;
 }
 .header_search__block input {
   outline: none;
@@ -205,6 +206,7 @@
   border-bottom: 1px solid #cccccc;
   padding: 5px 5px;
   background-color: transparent;
+  width: 100%;
 }
 .header_search__block button {
   border: none;
@@ -227,6 +229,7 @@
   align-items: center;
   font-weight: bold;
   flex: 1;
+  justify-content: center;
 }
 
 .header_name__online {
@@ -237,6 +240,11 @@
   margin-left: 10px;
 }
 .toggle_theme__block {
+}
+.toogls {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
 }
 .toggle_theme {
   border: none;

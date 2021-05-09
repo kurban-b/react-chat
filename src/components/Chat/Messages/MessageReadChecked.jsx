@@ -7,14 +7,11 @@ function MessageReadChecked({ message, isUserProfile }) {
     <>
       {!isUserProfile ? (
         ''
+      ) : message.sending ? (
+        <div className={styles.message__checked}>
+          <span className="material-icons">schedule</span>
+        </div>
       ) : (
-        message.sending ?
-          <div className={styles.message__checked}>
-            <span className="material-icons">
-              schedule
-            </span>
-          </div>
-        :
         <div className={styles.message__checked}>
           {message.read ? (
             <span className="material-icons">check</span>

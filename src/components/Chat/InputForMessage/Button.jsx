@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { addingMassage } from '../../../redux/ducks/messages';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
+import { useHotkeys } from 'react-hotkeys-hook';
 
 function ButtonAddMessage({ content, idContact, setTextMessage }) {
   const dispatch = useDispatch();
@@ -17,25 +18,27 @@ function ButtonAddMessage({ content, idContact, setTextMessage }) {
     setTextMessage('');
   };
 
+  useHotkeys('enter', () => {
+    handleAddingMassage(profileId, idContact, 'text', content);
+  });
+
   return (
-    <TransitionGroup>
-      <CSSTransition in={stateBTN} className="input_btn" timeout={100}>
-        {stateBTN ? (
-          <button>
-            <span className="material-icons">mic</span>
-          </button>
-        ) : (
-          <button
-            disabled={loadingAddMessage}
-            onClick={() => {
-              handleAddingMassage(profileId, idContact, 'text', content);
-            }}
-          >
-            <span className="material-icons">send</span>
-          </button>
-        )}
-      </CSSTransition>
-    </TransitionGroup>
+    <CSSTransition in={stateBTN} className="input_btn" timeout={100}>
+      {stateBTN ? (
+        <button disabled={loadingAddMessage}>
+          <span className="material-icons">mic</span>
+        </button>
+      ) : (
+        <button
+          disabled={loadingAddMessage}
+          onClick={() => {
+            handleAddingMassage(profileId, idContact, 'text', content);
+          }}
+        >
+          <span className="material-icons">send</span>
+        </button>
+      )}
+    </CSSTransition>
   );
 }
 

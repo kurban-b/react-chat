@@ -12,14 +12,10 @@ function Messages() {
   const dispatch = useDispatch();
   const filterFromSearch = useSelector((state) => state.messages.filter);
 
-
-
   //Фильтрация сообщений по поиску
   const filtered = messages.filter(
-    (message) => message.content.indexOf(
-      filterFromSearch === undefined ? '' : filterFromSearch) > -1,
-    );
-
+    (message) => message.content.toUpperCase().indexOf(filterFromSearch) > -1,
+  );
 
   //Подгурзка нужных сообщений
   useEffect(() => {
@@ -27,7 +23,7 @@ function Messages() {
   }, [dispatch, params]);
 
   return (
-    <div className={styles.messages} id='messages-block'>
+    <div className={styles.messages} id="messages-block">
       {filtered.map((message, index) => {
         return (
           <Message message={message} profileId={profile._id} key={index} />
