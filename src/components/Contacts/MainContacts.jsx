@@ -12,8 +12,13 @@ function MainContacts(props) {
   const filtered = contacts.filter(
     (contact) => contact.fullname.indexOf(filter) > -1,
   );
+  //Возвращает семь раз компонент прелоадер
+  const preloader = new Array(7)
+    .fill()
+    .map((item, index) => <Preloader key={index} />);
+
   return loading ? (
-    <Preloader />
+    preloader
   ) : (
     <div className={styles.main_contact}>
       <Search />

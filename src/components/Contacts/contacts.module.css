@@ -148,13 +148,9 @@ a.link_dark {
 /*CТИЛИ ДЛЯ ПРЕЛОАДЕРА*/
 
 .preloader_name {
-  display: block;
   padding-left: 300px;
   box-sizing: border-box;
   margin-bottom: 10px;
-}
-
-.preloader_circle {
 }
 
 .preloader_div {
@@ -167,9 +163,6 @@ a.link_dark {
 @media only screen and (max-width: 1920px) {
   .preloader_name {
     padding-left: 300px;
-  }
-
-  .preloader_div {
   }
 }
 
