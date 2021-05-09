@@ -19,8 +19,10 @@ li {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  position: relative;
   cursor: pointer;
   display: flex;
+
 }
 
 p {
@@ -68,14 +70,11 @@ a {
 }
 
 .selected {
-  background-color: #3c4fde;
+  background-color: rgba(60, 79, 222, 0.95);
   width: 100%;
   color: white;
   border-radius: 15px;
-}
-.selected ul {
-  color: red;
-  border: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .selected a {
@@ -118,7 +117,6 @@ a {
 }
 
 .info_block {
-  position: relative;
   margin-left: 20px;
   margin-top: 5px;
   max-width: 220px; /*** добавил от себя свойство @Курбан ***/
@@ -126,6 +124,7 @@ a {
 
 .time {
   position: absolute;
+  top: 30px;
   right: 20px;
   font-size: 14px;
 }
@@ -146,3 +145,60 @@ a.link_dark {
   text-decoration: none;
 }
 /*** конец стилей для темной темы ***/
+
+
+/*CТИЛИ ДЛЯ ПРЕЛОАДЕРА*/
+
+.preloader_name {
+  display: block;
+  padding-left: 300px;
+  box-sizing: border-box;
+  margin-bottom: 77px;
+  margin-top: 10px;
+}
+
+.preloader_circle {
+  margin-bottom: 50px;
+}
+
+.preloader_div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+
+@media only screen and (max-width: 1920px){
+  .preloader_name {
+   padding-left: 300px;
+  }
+
+  .preloader_div {
+
+  }
+}
+
+@media only screen and (max-width: 1600px){
+  .preloader_name {
+    padding-left: 260px;
+  }
+}
+
+@media only screen and (max-width: 1500px){
+  .preloader_name {
+    padding-left: 230px;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .preloader_div {
+    margin-left: 10px;
+  }
+  .preloader_name {
+    padding-left: 190px;
+  }
+
+}
+
