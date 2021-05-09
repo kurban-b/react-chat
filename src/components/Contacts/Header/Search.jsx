@@ -17,7 +17,7 @@ function Search(props) {
         value={filter}
         onChange={(e) => handleChange(e)}
         className={styles.input}
-        placeholder="Write name"
+        placeholder="Search"
       />
 
       <Reset />
