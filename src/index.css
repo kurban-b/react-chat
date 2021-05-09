@@ -8,12 +8,17 @@ body {
 }
 
 /** CSS transition **/
-
+.input_btn.exit-active,
 .input_btn.enter-active {
   transform: scale(0);
   transition: 100ms;
 }
-.input_btn.exit-active {
-  transform: scale(0);
-  transition: 100ms;
+
+.search-btn-active-exit,
+.toggle-theme-active-exit,
+.search-btn-active-enter,
+.toggle-theme-active-enter {
+  transform: scale(1.2);
+  transition: 200ms;
 }
+
