@@ -2,6 +2,7 @@ const initialState = {
   items: [],
   loading: true,
   darkTheme: false,
+  open: false,
 };
 
 export default function application(state = initialState, action) {
@@ -22,6 +23,11 @@ export default function application(state = initialState, action) {
       return {
         ...state,
         darkTheme: !state.darkTheme,
+      }
+    case 'application/open':
+      return {
+        ...state,
+        open: !state.open
       }
     default:
       return state;
@@ -51,3 +57,12 @@ export const loadApplicaton = () => {
       });
   };
 };
+
+export const openApplication = () => {
+  return ({
+    type: 'application/open'
+  });
+}
+
+
+
