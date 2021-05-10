@@ -1,16 +1,12 @@
 import React from 'react';
-import styles from './App.module.css';
-import { PropTypes } from 'prop-types';
-function Avatar(props) {
-  //Возвращаем нужное количество символов
-  const name = props.contacts.fullname.substr(0, 1);
-  //Индикатор онлайна
-  const online = props.contacts.online;
+import styles from '../Contacts/contacts.module.css';
 
+
+function Avatar1({size, online, contact}) {
   return (
-    <div className={styles[props.size]}>
-      <p className={online ? styles.online : ''}> </p>
-      <p>{name}</p>
+    <div className={styles.avatar}>
+      <p className={online ? styles.online : ''}/>
+      <p> {contact.fullname.substr(0, 1)} </p>
     </div>
   );
 }
