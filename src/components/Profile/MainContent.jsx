@@ -24,9 +24,7 @@ function MainContent (props) {
     return false;
   })
 
-  useEffect(() => {
-    dispatch(loadApplicaton());
-  }, []);
+
 
   if (loading === true) {
     return (

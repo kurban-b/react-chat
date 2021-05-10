@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import MainContent from './MainContent';
 import styles from './profile.module.css';
 import { useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 
-function Profile(props) {
+function Profile() {
   const darkTheme = useSelector((state) => state.application.darkTheme);
   const open = useSelector(state => state.application.open);
 
