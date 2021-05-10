@@ -4,6 +4,7 @@ import MessageInfo from './MessageInfo';
 import MessageReadChecked from './MessageReadChecked';
 import MessageTime from './MessageTime';
 import MessageDropdown from './MessageDropdown';
+import Avatar from '../../App/Avatar';
 
 function Message({ message, profileId }) {
   const isUserProfile = message.toUserId !== profileId;
@@ -15,13 +16,17 @@ function Message({ message, profileId }) {
 
   return (
     <div className={isUserProfile ? styles.outgoing : styles.incoming}>
-      <div className={styles.message}>{message.content}</div>
-      <div className={styles.message__time_checked}>
-        <MessageReadChecked message={message} isUserProfile={isUserProfile} />
-        <MessageTime date={message.time} />
+      {isUserProfile ? null : <Avatar size={'small'} online={false}/>}
+      <div className={isUserProfile ? styles.messageOutgoing : styles.messageIncoming}>
+        <div className={styles.message}>{message.content}</div>
+        <div className={styles.message__time_checked}>
+          <MessageReadChecked message={message} isUserProfile={isUserProfile} />
+          <MessageTime date={message.time} />
+        </div>
+        <MessageDropdown id={message._id} />
       </div>
-      <MessageDropdown id={message._id} />
     </div>
+
   );
 }
 

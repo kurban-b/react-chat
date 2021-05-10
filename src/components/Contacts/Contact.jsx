@@ -6,7 +6,7 @@ import NameContacts from './NameContacts';
 import { useSelector } from 'react-redux';
 import Time from './Info/Time';
 import { PropTypes } from 'prop-types';
-import Avatar1 from '../App/Avatar1';
+import Avatar from '../App/Avatar';
 
 function Contact(props) {
   const darkTheme = useSelector((state) => state.application.darkTheme);
@@ -28,7 +28,7 @@ function Contact(props) {
       >
         <li>
           {/* В size рекомендуется передать параметр medium */}
-          <Avatar1 contacts={props.contact} size={'medium'} />
+          <Avatar size={'medium'} online={props.contact.online}/>
           <div className={styles['info_block']}>
             <NameContacts contacts={props.contact} />
             <LastMessages contacts={props.contact} />
