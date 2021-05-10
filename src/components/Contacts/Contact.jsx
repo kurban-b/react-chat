@@ -3,9 +3,10 @@ import styles from './contacts.module.css';
 import { NavLink } from 'react-router-dom';
 import LastMessages from './Info/LastMessages';
 import NameContacts from './NameContacts';
-import Avatar from './Avatar';
 import { useSelector } from 'react-redux';
 import Time from './Info/Time';
+import { PropTypes } from 'prop-types';
+import Avatar1 from '../App/Avatar1';
 
 function Contact(props) {
   const darkTheme = useSelector((state) => state.application.darkTheme);
@@ -26,7 +27,8 @@ function Contact(props) {
         to={`/contact/${props.contact._id}`}
       >
         <li>
-          <Avatar conacts={props.contact} />
+          {/* В size рекомендуется передать параметр medium */}
+          <Avatar1 contacts={props.contact} size={'medium'} />
           <div className={styles['info_block']}>
             <NameContacts contacts={props.contact} />
             <LastMessages contacts={props.contact} />
@@ -40,4 +42,8 @@ function Contact(props) {
   );
 }
 
+Contact.propTypes = {
+  _id: PropTypes.string,
+  contact: PropTypes.object
+}
 export default Contact;

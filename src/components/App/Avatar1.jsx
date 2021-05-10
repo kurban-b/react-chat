@@ -11,4 +11,11 @@ function Avatar1({size, online, contact}) {
   );
 }
 
-export default Avatar1;
+Avatar.propTypes = {
+  online: PropTypes.bool,
+  fullname: PropTypes.object,
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
+}
+
+
+export default Avatar;
