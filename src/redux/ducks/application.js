@@ -62,6 +62,3 @@ export const openApplication = () => {
     type: 'application/open'
   });
 }
-
-
-
