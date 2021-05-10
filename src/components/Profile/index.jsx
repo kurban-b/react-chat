@@ -6,7 +6,11 @@ import { Route } from 'react-router-dom';
 
 function Profile(props) {
   const darkTheme = useSelector((state) => state.application.darkTheme);
+<<<<<<< HEAD
   const open = useSelector((state) => state.application.open);
+=======
+  const open = useSelector(state => state.application.open);
+>>>>>>> a2a611bd67bda2e0f91e60b1c48be133274d4371
 
   if (open === true) {
     return (
