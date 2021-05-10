@@ -37,7 +37,7 @@ function MainContent (props) {
   }
 
   return (
-    <div>
+    <div className={styles.animate}>
       <ContactBlock application={application} filteredContacts={filteredContacts} />
       <div className={styles.social}>
         <Social darkTheme={props.darkTheme} filteredContacts={filteredContacts} />

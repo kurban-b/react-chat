@@ -12,18 +12,18 @@ function Messages() {
   const dispatch = useDispatch();
   const filterFromSearch = useSelector((state) => state.messages.filter);
 
+  //Фильтрация сообщений по поиску
+  const filtered = messages.filter(
+    (message) => message.content.toUpperCase().indexOf(filterFromSearch) > -1,
+  );
+
   //Подгурзка нужных сообщений
   useEffect(() => {
     dispatch(loadMessages(params));
   }, [dispatch, params]);
 
-  //Фильтрация сообщений по поиску
-  const filtered = messages.filter(
-    (message) => message.content.indexOf(filterFromSearch) > -1,
-  );
-
   return (
-    <div className={styles.messages}>
+    <div className={styles.messages} id="messages-block">
       {filtered.map((message, index) => {
         return (
           <Message message={message} profileId={profile._id} key={index} />

@@ -8,6 +8,15 @@
   width: 55%;
   padding: 0 10px;
 }
+.container1 {
+  width: 55%;
+  background: rgb(254, 254, 254);
+  background: radial-gradient(
+          circle,
+          rgba(254, 254, 254, 1) 39%,
+          rgba(243, 250, 255, 0.8) 100%
+  );
+}
 .container_dark {
   background-color: rgb(33, 33, 33);
   width: 35%;
@@ -31,12 +40,13 @@
   color: #3c3f41;
 }
 .header {
+  position: relative;
   text-align: center;
   padding: 15px 5px;
   height: 10%;
   border-bottom: 1px solid #dbe4f1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .header__loading {
@@ -197,7 +207,7 @@
 .header_search__block {
   display: flex;
   align-items: center;
-  width: 200px;
+  width: 30%;
 }
 .header_search__block input {
   outline: none;
@@ -205,6 +215,7 @@
   border-bottom: 1px solid #cccccc;
   padding: 5px 5px;
   background-color: transparent;
+  width: 100%;
 }
 .header_search__block button {
   border: none;
@@ -223,11 +234,11 @@
   font-size: 20px;
 }
 .header_name__block {
-  padding-left: 10%;
   display: flex;
   align-items: center;
   font-weight: bold;
   flex: 1;
+  justify-content: center;
 }
 
 .header_name__online {
@@ -238,7 +249,11 @@
   margin-left: 10px;
 }
 .toggle_theme__block {
-
+}
+.toogls {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
 }
 .toggle_theme {
   border: none;
@@ -247,5 +262,23 @@
   cursor: pointer;
   color: #717374;
   font-size: 20px;
-
 }
+.input__block button {
+  background-color: rgba(224, 224, 224, 0.77);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #3c3f41;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: 100ms;
+}
+.input__block button:hover {
+  transform: scale(1.1);
+}
+/** CSS transition **/

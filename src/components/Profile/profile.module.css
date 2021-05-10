@@ -1,8 +1,8 @@
 .container {
   width: 20%;
   padding: 20px 15px;
+  animation: show-loader 1s forwards;
 }
-
 .info {
   margin: auto;
   width: 60%;
@@ -143,4 +143,16 @@
   top: 0;
 }
 
+@keyframes show-loader {
+  0%{
+  opacity: 0;
+    transform: translateX(100px);
+  }
+  50%{
+  opacity: 1;
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
 /*** конец стилей для темной темы ***/

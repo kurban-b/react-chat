@@ -19,6 +19,7 @@ li {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  position: relative;
   cursor: pointer;
   display: flex;
 }
@@ -33,23 +34,28 @@ a {
 }
 
 .input {
-  width: 25%;
-  height: 40px;
+  width: 24%;
+  height: 45px;
   position: fixed;
-  top: 0;
+  top: 8px;
+  left: 10px;
   z-index: 999;
   outline: none;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
 }
 
 .reset {
   z-index: 1000;
   position: absolute;
-  right: 0;
-  top: 10px;
+  right: 10px;
+  top: 20px;
   font-size: 18px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  opacity: 0.5;
 }
 
 .name {
@@ -59,14 +65,15 @@ a {
 
 .messages {
   font-size: 14px;
-
   font-weight: 300;
 }
 
 .selected {
-  background-color: #3c4fde;
+  background-color: rgba(60, 79, 222, 0.95);
   width: 100%;
   color: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .selected a {
@@ -114,6 +121,12 @@ a {
   max-width: 220px; /*** добавил от себя свойство @Курбан ***/
 }
 
+.time {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-size: 14px;
+}
 
 /*** стили для темной темы ***/
 .container_dark {
@@ -131,3 +144,49 @@ a.link_dark {
   text-decoration: none;
 }
 /*** конец стилей для темной темы ***/
+
+/*CТИЛИ ДЛЯ ПРЕЛОАДЕРА*/
+
+.preloader_name {
+  padding-left: 300px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.preloader_div {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1920px) {
+  .preloader_name {
+    padding-left: 300px;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .preloader_name {
+    padding-left: 260px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .preloader_name {
+    padding-left: 230px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  input {
+    margin-left: -5px;
+  }
+
+  .preloader_div {
+    margin-left: 10px;
+  }
+  .preloader_name {
+    padding-left: 190px;
+  }
+}

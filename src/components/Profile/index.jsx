@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import MainContent from './MainContent';
 import styles from './profile.module.css';
@@ -10,7 +11,7 @@ function Profile(props) {
 
   if (open === true) {
     return (
-      <div className={darkTheme ? styles.container_dark : styles.container}>
+      <div className={darkTheme && open ? styles.container_dark : styles.container }>
         <Route exact path="/contact/:id?">
           <MainContent darkTheme={darkTheme} />
         </Route>

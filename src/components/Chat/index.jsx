@@ -8,9 +8,10 @@ import StartPage from './StartPage';
 import { useSelector } from 'react-redux';
 
 function Chat() {
-  const darkTheme = useSelector(state => state.application.darkTheme)
+  const darkTheme = useSelector((state) => state.application.darkTheme);
+  const open = useSelector(state => state.application.open);
   return (
-    <div className={darkTheme ? styles.container_dark : styles.container}>
+    <div className={darkTheme && open ? styles.container_dark : styles.container && styles.container1}>
       <Switch>
         <Route exact path="/contact/:id?">
           <ChatHeader />
