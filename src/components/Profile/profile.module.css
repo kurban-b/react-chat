@@ -121,9 +121,9 @@
   height: 60px;
   border-radius: 100px;
   background-image: linear-gradient(
-          109.5deg,
-          rgba(76, 221, 242, 1) 11.2%,
-          rgba(92, 121, 255, 1) 91.1%
+    109.5deg,
+    rgba(76, 221, 242, 1) 11.2%,
+    rgba(92, 121, 255, 1) 91.1%
   );
 }
 .avatar p {
@@ -144,14 +144,14 @@
 }
 
 @keyframes show-loader {
-  0%{
-  opacity: 0;
+  0% {
+    opacity: 0;
     transform: translateX(100px);
   }
-  50%{
-  opacity: 1;
+  50% {
+    opacity: 1;
   }
-  100%{
+  100% {
     transform: translateX(0);
   }
 }

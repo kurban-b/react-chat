@@ -8,15 +8,6 @@
   width: 55%;
   padding: 0 10px;
 }
-.container1 {
-  width: 55%;
-  background: rgb(254, 254, 254);
-  background: radial-gradient(
-          circle,
-          rgba(254, 254, 254, 1) 39%,
-          rgba(243, 250, 255, 0.8) 100%
-  );
-}
 .container_dark {
   background-color: rgb(33, 33, 33);
   width: 35%;
