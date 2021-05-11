@@ -13,7 +13,7 @@ function Profile() {
       <div
         className={`
           ${darkTheme ? styles.container_dark : styles.container} 
-          ${ styles.profile_open}
+          ${styles.profile_open}
         `}
       >
         <Route exact path="/contact/:id?">

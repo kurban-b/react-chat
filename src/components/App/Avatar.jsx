@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Avatar({contact, size, online }) {
+function Avatar({ contact, size, online }) {
   return (
     <div className={`Avatar ${size}`}>
       <p className={online ? 'online' : ''} />

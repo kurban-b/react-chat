@@ -5,8 +5,7 @@ function NameContacts(props) {
   return <p className={styles.name}>{props.contacts.fullname}</p>;
 }
 
-
 NameContacts.propTypes = {
-  fullname: PropTypes.string
-}
+  fullname: PropTypes.string,
+};
 export default NameContacts;

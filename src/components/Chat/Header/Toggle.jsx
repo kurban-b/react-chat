@@ -5,20 +5,24 @@ import { openApplication } from '../../../redux/ducks/application';
 import { CSSTransition } from 'react-transition-group';
 
 function Toggle() {
-  const [toogle, setToggle] = useState(false)
+  const [toogle, setToggle] = useState(false);
   const dispatch = useDispatch();
   const handleClick = () => {
-  dispatch(openApplication())
-    setToggle(!toogle)
-  }
+    dispatch(openApplication());
+    setToggle(!toogle);
+  };
 
   return (
-    <CSSTransition  in={toogle} timeout={200} classNames={{
-      enterActive: 'toggle-active-enter',
-      exitActive: 'toggle-active-exit',
-    }}>
+    <CSSTransition
+      in={toogle}
+      timeout={200}
+      classNames={{
+        enterActive: 'toggle-active-enter',
+        exitActive: 'toggle-active-exit',
+      }}
+    >
       <div className={styles.toggle__block} onClick={handleClick}>
-        <button className="material-icons" >settings</button>
+        <button className="material-icons">settings</button>
       </div>
     </CSSTransition>
   );

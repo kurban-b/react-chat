@@ -139,10 +139,8 @@
 @keyframes opened {
   from {
     width: 0;
-
   }
   to {
     width: 25%;
-
   }
 }

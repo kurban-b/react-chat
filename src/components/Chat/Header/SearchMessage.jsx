@@ -26,10 +26,14 @@ function SearchMessage() {
 
   return (
     <div className={styles.header_search__block}>
-      <CSSTransition in={isSearchIsActive} timeout={200} classNames={{
-        enterActive: 'search-btn-active-enter',
-        exitActive: 'search-btn-active-exit',
-      }}>
+      <CSSTransition
+        in={isSearchIsActive}
+        timeout={200}
+        classNames={{
+          enterActive: 'search-btn-active-enter',
+          exitActive: 'search-btn-active-exit',
+        }}
+      >
         <button className="material-icons" onClick={handleToggleStateActive}>
           search
         </button>

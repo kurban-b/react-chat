@@ -2,12 +2,15 @@ import React from 'react';
 import styles from '../profile.module.css';
 import Avatar from '../../App/Avatar';
 
-function Block (props) {
-
+function Block(props) {
   return (
     <div>
       <div className={styles.avatarBlock}>
-        <Avatar size='large' contact={props.contact} online={props.contact.online} />
+        <Avatar
+          size="large"
+          contact={props.contact}
+          online={props.contact.online}
+        />
       </div>
       <div className={styles.name}>{props.contact.fullname}</div>
       <div className={styles.username}>@{props.contact.username}</div>

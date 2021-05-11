@@ -28,7 +28,11 @@ function Contact(props) {
       >
         <li>
           {/* В size рекомендуется передать параметр medium */}
-          <Avatar contact={props.contact} size={'medium'} online={props.contact.online}/>
+          <Avatar
+            contact={props.contact}
+            size={'medium'}
+            online={props.contact.online}
+          />
           <div className={styles['info_block']}>
             <NameContacts contacts={props.contact} />
             <LastMessages contacts={props.contact} />
@@ -44,6 +48,6 @@ function Contact(props) {
 
 Contact.propTypes = {
   _id: PropTypes.string,
-  contact: PropTypes.object
-}
+  contact: PropTypes.object,
+};
 export default Contact;

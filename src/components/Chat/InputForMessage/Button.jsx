@@ -15,15 +15,19 @@ function ButtonAddMessage({ content, idContact, setTextMessage }) {
 
   const handleAddingMassage = (myId, contactId, type, message) => {
     if (message === '') {
-      return
+      return;
     }
     dispatch(addingMassage(myId, contactId, type, message));
     setTextMessage('');
   };
 
-  useHotkeys('enter', () => {
-    handleAddingMassage(profileId, idContact, 'text', content);
-  }, {enableOnTags: ['INPUT']});
+  useHotkeys(
+    'enter',
+    () => {
+      handleAddingMassage(profileId, idContact, 'text', content);
+    },
+    { enableOnTags: ['INPUT'] },
+  );
 
   return (
     <CSSTransition in={stateBTN} className="input_btn" timeout={100}>

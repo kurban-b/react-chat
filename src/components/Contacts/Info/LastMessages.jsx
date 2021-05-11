@@ -15,7 +15,7 @@ function LastMessages(props) {
 
 LastMessages.propTypes = {
   lastMessage: PropTypes.string,
-  content: PropTypes.string
-}
+  content: PropTypes.string,
+};
 
 export default LastMessages;
