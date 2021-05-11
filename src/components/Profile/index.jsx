@@ -11,9 +11,10 @@ function Profile() {
   if (open === true) {
     return (
       <div
-        className={`${darkTheme ? styles.container_dark : styles.container} ${
-          styles.profile_wind
-        }`}
+        className={`
+          ${darkTheme ? styles.container_dark : styles.container} 
+          ${ styles.profile_open}
+        `}
       >
         <Route exact path="/contact/:id?">
           <MainContent darkTheme={darkTheme} />

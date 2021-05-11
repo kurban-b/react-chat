@@ -131,7 +131,7 @@
   );
 }
 
-.profile_wind {
+.profile_open {
   transition: 300ms;
   animation: opened 300ms linear;
 }
