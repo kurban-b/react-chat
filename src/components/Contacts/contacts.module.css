@@ -3,6 +3,7 @@
   box-sizing: border-box;
   background-color: #eeeeee;
   position: relative;
+  transition: 300ms;
 }
 
 .contacts {
@@ -49,13 +50,16 @@ a {
 .reset {
   z-index: 1000;
   position: absolute;
-  right: 10px;
-  top: 20px;
+  right: 8px;
+  top: 18px;
   font-size: 18px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .name {
@@ -101,6 +105,7 @@ a {
 
 /*** стили для темной темы ***/
 .container_dark {
+  transition: 300ms;
   width: 25%;
   box-sizing: border-box;
   background-color: #2d2d2d;
@@ -113,6 +118,12 @@ a {
 a.link_dark {
   color: #ffffff;
   text-decoration: none;
+}
+.container_dark input {
+  background-color: #454545;
+}
+.container_dark button {
+  color: darkgrey;
 }
 /*** конец стилей для темной темы ***/
 

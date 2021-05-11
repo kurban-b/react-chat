@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from '../profile.module.css';
-import Ava from './Ava.jsx';
+import Avatar from '../../App/Avatar';
 
 function Block (props) {
+
   return (
     <div>
-      <Ava contacts={props.contact} />
+      <div className={styles.avatarBlock}>
+        <Avatar size='large' contact={props.contact} online={props.contact.online} />
+      </div>
       <div className={styles.name}>{props.contact.fullname}</div>
       <div className={styles.username}>@{props.contact.username}</div>
       <div className={styles.icons}>

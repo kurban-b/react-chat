@@ -1,7 +1,6 @@
 .container {
   width: 25%;
   padding: 20px 15px;
-  animation: show-loader 1s forwards;
 }
 .info {
   margin: auto;
@@ -115,6 +114,10 @@
   justify-content: center;
   align-items: center;
 }
+.avatarBlock {
+  display: flex;
+  justify-content: center;
+}
 .avatar {
   width: 60px;
   position: relative;
@@ -127,32 +130,19 @@
     rgba(92, 121, 255, 1) 91.1%
   );
 }
-.avatar p {
-  font-size: 25px;
-  color: white;
-  text-align: center;
-  line-height: 60px;
-  font-weight: 300;
-}
-.online {
-  background-color: #0ff80f;
-  width: 13px;
-  height: 13px;
-  border-radius: 100px;
-  position: absolute;
-  right: 5px;
-  top: 0;
+
+.profile_wind {
+  transition: 300ms;
+  animation: opened 300ms linear;
 }
 
- @keyframes show-loader {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
+@keyframes opened {
+  from {
+    width: 0;
+
   }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
+  to {
+    width: 25%;
+
   }
 }
