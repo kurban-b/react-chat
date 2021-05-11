@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from '../profile.module.css';
+import { PropTypes } from 'prop-types';
 
-function UserName (props) {
+function UserName(props) {
   return (
     <div>
       <div>Social</div>
-      <div className={props.darkTheme ? styles.socialBlock_dark : styles.socialBlock}>
+      <div
+        className={
+          props.darkTheme ? styles.socialBlock_dark : styles.socialBlock
+        }
+      >
         <div className={styles.media}>
           <div className={styles.mediaImages}>
             <i className="fab fa-instagram"></i>
@@ -28,5 +33,10 @@ function UserName (props) {
     </div>
   );
 }
+
+UserName.propTypes = {
+  contact: PropTypes.object.isRequired,
+  _id: PropTypes.number,
+};
 
 export default UserName;

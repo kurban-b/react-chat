@@ -1,11 +1,18 @@
 import React from 'react';
 import styles from '../profile.module.css';
-import Ava from './Ava.jsx';
+import Avatar from '../../App/Avatar';
+import { PropTypes } from 'prop-types';
 
-function Block (props) {
+function Block(props) {
   return (
     <div>
-      <Ava contacts={props.contact} />
+      <div className={styles.profile_avatar}>
+        <Avatar
+          contact={props.contact}
+          size={'medium'}
+          online={props.contact.online}
+        />
+      </div>
       <div className={styles.name}>{props.contact.fullname}</div>
       <div className={styles.username}>@{props.contact.username}</div>
       <div className={styles.icons}>
@@ -22,5 +29,10 @@ function Block (props) {
     </div>
   );
 }
+
+Block.propTypes = {
+  contact: PropTypes.object.isRequired,
+  _id: PropTypes.number,
+};
 
 export default Block;

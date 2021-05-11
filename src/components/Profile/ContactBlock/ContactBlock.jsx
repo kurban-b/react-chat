@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../profile.module.css';
 import Block from './Block';
+import { PropTypes } from 'prop-types';
 
 function ContactBlock(props) {
   return (
@@ -11,5 +12,9 @@ function ContactBlock(props) {
     </div>
   );
 }
+
+ContactBlock.propTypes = {
+  filteredContacts: PropTypes.object.isRequired,
+};
 
 export default ContactBlock;

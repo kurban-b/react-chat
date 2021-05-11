@@ -1,7 +1,7 @@
 .container {
   width: 25%;
   padding: 20px 15px;
-  animation: show-loader 1s forwards;
+  animation: show-loader 0.5s backwards;
 }
 .info {
   margin: auto;
@@ -143,16 +143,18 @@
   right: 5px;
   top: 0;
 }
+.profile_avatar {
+  display: flex;
+  justify-content: center;
+}
 
- @keyframes show-loader {
+@keyframes show-loader {
   0% {
     opacity: 0;
     transform: translateX(100px);
   }
-  50% {
-    opacity: 1;
-  }
   100% {
+    opacity: 1;
     transform: translateX(0);
   }
 }
