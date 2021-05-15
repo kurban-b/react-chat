@@ -1,7 +1,7 @@
 const initialState = {
   items: [],
   loading: true,
-  darkTheme: false,
+  darkTheme: JSON.parse(localStorage.getItem('darkTheme')) ,
   open: false,
 };
 
@@ -20,6 +20,7 @@ export default function application(state = initialState, action) {
         loading: false,
       };
     case 'application/darkTheme/toogle':
+      localStorage.setItem('darkTheme', !state.darkTheme)
       return {
         ...state,
         darkTheme: !state.darkTheme,
