@@ -10,7 +10,7 @@ function Reset(props) {
   };
   return (
     <button className={styles.reset} onClick={handleReset}>
-      х
+      <span className="material-icons">clear</span>
     </button>
   );
 }

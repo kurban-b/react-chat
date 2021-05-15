@@ -4,3 +4,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.chat_profile_block {
+  flex: 1;
+  display: flex;
+}

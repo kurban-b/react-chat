@@ -11,16 +11,9 @@ function Chat() {
   const darkTheme = useSelector((state) => state.application.darkTheme);
   return (
     <div className={darkTheme ? styles.container_dark : styles.container}>
-      <Switch>
-        <Route exact path="/contact/:id?">
           <ChatHeader />
           <Messages />
           <InputForMessage />
-        </Route>
-        <Route>
-          <StartPage />
-        </Route>
-      </Switch>
     </div>
   );
 }

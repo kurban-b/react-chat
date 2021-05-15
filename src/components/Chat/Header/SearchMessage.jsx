@@ -5,6 +5,7 @@ import {
   resetFilterMessage,
   setFilterMessage,
 } from '../../../redux/ducks/messages';
+import { CSSTransition } from 'react-transition-group';
 
 function SearchMessage() {
   const dispatch = useDispatch();
@@ -25,9 +26,18 @@ function SearchMessage() {
 
   return (
     <div className={styles.header_search__block}>
-      <button className="material-icons" onClick={handleToggleStateActive}>
-        search
-      </button>
+      <CSSTransition
+        in={isSearchIsActive}
+        timeout={200}
+        classNames={{
+          enterActive: 'search-btn-active-enter',
+          exitActive: 'search-btn-active-exit',
+        }}
+      >
+        <button className="material-icons" onClick={handleToggleStateActive}>
+          search
+        </button>
+      </CSSTransition>
       {isSearchIsActive ? (
         <>
           <input

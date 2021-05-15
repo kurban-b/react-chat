@@ -1,7 +1,8 @@
 const initialState = {
   items: [],
   loading: true,
-  darkTheme: false,
+  darkTheme: JSON.parse(localStorage.getItem('darkTheme')) ,
+  open: false,
 };
 
 export default function application(state = initialState, action) {
@@ -19,9 +20,15 @@ export default function application(state = initialState, action) {
         loading: false,
       };
     case 'application/darkTheme/toogle':
+      localStorage.setItem('darkTheme', !state.darkTheme)
       return {
         ...state,
         darkTheme: !state.darkTheme,
+      };
+    case 'application/open':
+      return {
+        ...state,
+        open: !state.open,
       };
     default:
       return state;
@@ -48,5 +55,11 @@ export const loadApplicaton = () => {
           payload: json,
         });
       });
+  };
+};
+
+export const openApplication = () => {
+  return {
+    type: 'application/open',
   };
 };

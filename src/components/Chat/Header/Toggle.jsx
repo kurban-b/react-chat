@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../chat.module.css';
+import { useDispatch } from 'react-redux';
+import { openApplication } from '../../../redux/ducks/application';
+import { CSSTransition } from 'react-transition-group';
 
 function Toggle() {
+  const [toogle, setToggle] = useState(false);
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(openApplication());
+    setToggle(!toogle);
+  };
+
   return (
-    <div className={styles.toggle__block}>
-      <button className="material-icons">settings</button>
-    </div>
+    <CSSTransition
+      in={toogle}
+      timeout={200}
+      classNames={{
+        enterActive: 'toggle-active-enter',
+        exitActive: 'toggle-active-exit',
+      }}
+    >
+      <div className={styles.toggle__block} onClick={handleClick}>
+        <button className="material-icons">settings</button>
+      </div>
+    </CSSTransition>
   );
 }
 

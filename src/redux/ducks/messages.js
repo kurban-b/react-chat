@@ -1,3 +1,5 @@
+import { scrollMessages } from '../../addition';
+
 const initialState = {
   messages: [],
   loading: false,
@@ -24,12 +26,32 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loadingMessage: true,
+        messages: [...state.messages, { ...action.payload, sending: true }],
       };
     case 'messages/adding/success':
       return {
         ...state,
-        messages: [...state.messages, action.payload],
+        messages: state.messages
+          .map((message) => {
+            if (message.tempId === action.payload.tempId) {
+              return {
+                ...action.payload,
+                sending: false,
+              };
+            }
+            return message;
+          })
+          .filter((message) => {
+            return message.content !== undefined;
+          }),
         loadingMessage: false,
+      };
+    case 'messages/delete/success':
+      return {
+        ...state,
+        messages: state.messages.filter(
+          (message) => message._id !== action.payload,
+        ),
       };
     case 'messages/search/filtered':
       return {
@@ -69,7 +91,6 @@ export const loadMessages = (id) => {
     dispatch({
       type: 'messages/load/start',
     });
-
     fetch(
       `https://api.intocode.ru:8001/api/messages/5f2ea3801f986a01cefc8bcd/${id}`,
     )
@@ -80,6 +101,7 @@ export const loadMessages = (id) => {
           payload: json,
           id: id,
         });
+        scrollMessages();
       })
       .catch((error) => {
         console.error(error);
@@ -89,10 +111,11 @@ export const loadMessages = (id) => {
 
 // Санк для добавления сообщения
 export const addingMassage = (myId, contactId, type, content) => {
+  const tempId = Math.random();
   return (dispatch) => {
     dispatch({
       type: 'messages/adding/start',
-      payload: { myId, contactId, type, content },
+      payload: { myId, contactId, type, content, tempId: tempId },
     });
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
@@ -108,8 +131,9 @@ export const addingMassage = (myId, contactId, type, content) => {
       .then((json) => {
         dispatch({
           type: 'messages/adding/success',
-          payload: json,
+          payload: { ...json, tempId: tempId },
         });
+        scrollMessages();
       })
       .catch((error) => {
         console.error(error);
@@ -121,17 +145,24 @@ export const addingMassage = (myId, contactId, type, content) => {
 export const removingMessage = (id) => {
   return (dispatch) => {
     dispatch({
-      type: 'messages/remove/start',
+      type: 'messages/delete/start',
     });
     fetch(`https://api.intocode.ru:8001/api/messages`, {
       method: 'DELETE',
       body: JSON.stringify({ id }),
       headers: {
-        Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-    }).catch((error) => {
-      console.error(error);
-    });
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'messages/delete/success',
+          payload: id,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 };
