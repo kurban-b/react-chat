@@ -10,6 +10,7 @@ import StartPage from '../Chat/StartPage';
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(loadApplicaton());
   }, [dispatch]);
