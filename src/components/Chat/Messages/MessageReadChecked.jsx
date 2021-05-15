@@ -14,9 +14,9 @@ function MessageReadChecked({ message, isUserProfile }) {
       ) : (
         <div className={styles.message__checked}>
           {message.read ? (
-            <span className="material-icons">check</span>
-          ) : (
             <span className="material-icons">done_all</span>
+          ) : (
+            <span className="material-icons">check</span>
           )}
         </div>
       )}

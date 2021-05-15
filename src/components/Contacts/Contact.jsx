@@ -3,10 +3,11 @@ import styles from './contacts.module.css';
 import { NavLink } from 'react-router-dom';
 import LastMessages from './Info/LastMessages';
 import NameContacts from './NameContacts';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Time from './Info/Time';
 import { PropTypes } from 'prop-types';
 import Avatar from '../App/Avatar';
+import { resetReducer } from '../../redux/ducks/messages';
 
 function Contact(props) {
   const darkTheme = useSelector((state) => state.application.darkTheme);
@@ -21,6 +22,7 @@ function Contact(props) {
           ? `${styles.selected} ${styles.contacts}`
           : styles.contacts
       }
+
     >
       <NavLink
         className={darkTheme ? styles.link_dark : ''}

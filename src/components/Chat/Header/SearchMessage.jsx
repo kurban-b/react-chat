@@ -46,9 +46,11 @@ function SearchMessage() {
             value={filter}
             onChange={handleSearch}
           />
-          <button className="material-icons" onClick={handleResetSearch}>
-            clear
-          </button>
+          {filter ? (
+            <button className="material-icons" onClick={handleResetSearch}>
+              clear
+            </button>
+          ) : ''}
         </>
       ) : (
         ''

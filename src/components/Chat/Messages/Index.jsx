@@ -27,7 +27,7 @@ function Messages() {
       {filtered.map((message, index) => {
         return (
           <Message message={message} profileId={profile._id} key={index} />
-        );
+        )
       })}
     </div>
   );
