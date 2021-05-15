@@ -14,6 +14,7 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loading: true,
+        messages: []
       };
     case 'messages/load/success':
       return {
