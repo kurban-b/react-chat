@@ -10,7 +10,8 @@ function Messages() {
 
   const messages = useSelector((state) => {
     return state.messages.messages.filter(
-      (message) => message.content.toUpperCase().indexOf(filterFromSearch) > -1,
+      (message) =>
+        message.content.toUpperCase().indexOf(filterFromSearch.toUpperCase()) > -1,
     );
   });
 
