@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './App.module.css';
 import Contacts from '../Contacts';
 import Chat from '../Chat';
-import Profile from '../Profile';
+import Profile from '../Profile/Index';
 import { loadApplicaton } from '../../redux/ducks/application';
 import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';

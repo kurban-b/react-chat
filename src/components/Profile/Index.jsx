@@ -5,7 +5,6 @@ import ContactBlock from './ContactBlock';
 import Social from './Social';
 import Media from './Media';
 import { useParams } from 'react-router-dom';
-import ReactLoading from 'react-loading';
 import { CSSTransition } from 'react-transition-group';
 
 function Profile() {
