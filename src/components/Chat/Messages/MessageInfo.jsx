@@ -7,7 +7,7 @@ function MessageInfo({ content }) {
 }
 
 MessageInfo.propTypes = {
-  content: PropTypes.string,
+  content: PropTypes.string.isRequired,
 };
 
 export default MessageInfo;

@@ -7,10 +7,13 @@ import Toggle from './Toggle';
 import ToogleTheme from './ToogleTheme';
 
 function ChatHeader() {
-  const contacts = useSelector((state) => state.contacts.contacts);
   const params = useParams().id;
+
   const loading = useSelector((state) => state.messages.loading);
-  const contact = contacts.find((contact) => contact._id === params);
+
+  const contact = useSelector((state) => {
+    return state.contacts.contacts.find((contact) => contact._id === params)
+  });
 
   if (loading) {
     return (
@@ -27,7 +30,7 @@ function ChatHeader() {
     <div className={styles.header}>
       <SearchMessage />
       <div className={styles.header_name__block}>
-        {contacts.length === 0 ? (
+        {contact === undefined ? (
           ''
         ) : contact.online && contact.online !== undefined ? (
           <>

@@ -3,7 +3,7 @@ import styles from '../chat.module.css';
 
 function AddFile() {
   return (
-    <button  className={styles.input_btn}>
+    <button className={styles.input_btn}>
       <span className="material-icons">attach_file</span>
     </button>
   );

@@ -44,8 +44,8 @@ function Message({ message, profileId }) {
 }
 
 Message.propTypes = {
-  message: PropTypes.object,
-  profileId: PropTypes.string,
+  message: PropTypes.object.isRequired,
+  profileId: PropTypes.string.isRequired,
 };
 
 export default Message;

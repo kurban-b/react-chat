@@ -6,6 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 
 function ToogleTheme() {
   const dispatch = useDispatch();
+
   const darkTheme = useSelector((state) => state.application.darkTheme);
 
   const handleToogleTheme = () => {

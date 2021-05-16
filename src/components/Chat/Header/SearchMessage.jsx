@@ -52,7 +52,9 @@ function SearchMessage() {
             <button className="material-icons" onClick={handleResetSearch}>
               clear
             </button>
-          ) : ''}
+          ) : (
+            ''
+          )}
         </>
       ) : (
         ''

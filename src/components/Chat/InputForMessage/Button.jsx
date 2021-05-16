@@ -53,9 +53,9 @@ function ButtonAddMessage({ content, idContact, setTextMessage }) {
 }
 
 ButtonAddMessage.propTypes = {
-  content: PropTypes.string,
-  idContact: PropTypes.string,
-  setTextMessage: PropTypes.func,
+  content: PropTypes.string.isRequired,
+  idContact: PropTypes.string.isRequired,
+  setTextMessage: PropTypes.func.isRequired,
 };
 
 export default ButtonAddMessage;

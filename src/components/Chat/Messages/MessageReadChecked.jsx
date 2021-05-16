@@ -25,7 +25,7 @@ function MessageReadChecked({ message, isUserProfile }) {
 }
 
 MessageReadChecked.propTypes = {
-  read: PropTypes.object,
-  isUserProfile: PropTypes.bool,
+  read: PropTypes.object.isRequired,
+  isUserProfile: PropTypes.bool.isRequired,
 };
 export default MessageReadChecked;

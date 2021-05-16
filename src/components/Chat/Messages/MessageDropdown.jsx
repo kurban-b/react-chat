@@ -22,14 +22,14 @@ function MessageDropdown({ id }) {
           handleDeleteMassage(id);
         }}
       >
-        <i className="fas fa-trash-alt"></i>
+        <i className="fas fa-trash-alt" />
       </li>
     </ul>
   );
 }
 
 MessageDropdown.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 };
 
 export default MessageDropdown;
