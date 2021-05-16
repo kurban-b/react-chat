@@ -7,9 +7,13 @@ import { loadMessages } from '../../../redux/ducks/messages';
 
 function Messages() {
   const messages = useSelector((state) => state.messages.messages);
+
   const profile = useSelector((state) => state.application.items);
-  const params = useParams().id;
+
+  const id = useParams().id;
+
   const dispatch = useDispatch();
+
   const filterFromSearch = useSelector((state) => state.messages.filter);
 
   //Фильтрация сообщений по поиску
@@ -19,8 +23,8 @@ function Messages() {
 
   //Подгурзка нужных сообщений
   useEffect(() => {
-    dispatch(loadMessages(params));
-  }, [dispatch, params]);
+    dispatch(loadMessages(id));
+  }, [dispatch, id]);
 
   return (
     <div className={styles.messages} id="messages-block">
