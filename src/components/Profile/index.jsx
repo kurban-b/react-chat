@@ -4,6 +4,7 @@ import styles from './profile.module.css';
 import { useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 
+
 function Profile() {
   const darkTheme = useSelector((state) => state.application.darkTheme);
   const open = useSelector((state) => state.application.open);
@@ -22,6 +23,7 @@ function Profile() {
       </div>
     );
   }
+
   return null;
 }
 
