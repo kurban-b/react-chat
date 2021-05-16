@@ -7,6 +7,7 @@ import InputMassage from './InputMassage';
 
 function InputForMessage() {
   const [textMessage, setTextMessage] = useState('');
+
   const idContact = useParams().id;
 
   const handleMessageInput = (e) => {
