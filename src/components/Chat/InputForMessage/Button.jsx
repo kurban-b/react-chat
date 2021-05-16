@@ -7,8 +7,11 @@ import { useHotkeys } from 'react-hotkeys-hook';
 
 function ButtonAddMessage({ content, idContact, setTextMessage }) {
   const dispatch = useDispatch();
+
   const profileId = useSelector((state) => state.application.items._id);
+
   const stateBTN = content === '';
+
   const loadingAddMessage = useSelector(
     (state) => state.messages.loadingMessage,
   );

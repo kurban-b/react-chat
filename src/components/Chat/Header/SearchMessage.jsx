@@ -9,7 +9,9 @@ import { CSSTransition } from 'react-transition-group';
 
 function SearchMessage() {
   const dispatch = useDispatch();
+
   const [isSearchIsActive, setIsSearchIsActive] = useState(false);
+
   const filter = useSelector((state) => state.messages.filter);
 
   const handleSearch = (e) => {
