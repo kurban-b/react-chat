@@ -6,7 +6,7 @@ import NameContacts from './NameContacts';
 import { useDispatch, useSelector } from 'react-redux';
 import Time from './Info/Time';
 import { PropTypes } from 'prop-types';
-import Avatar from '../App/Avatar';
+import Avatar from '../App/Avatar/Avatar';
 import { resetReducer } from '../../redux/ducks/messages';
 
 function Contact(props) {

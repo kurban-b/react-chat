@@ -3,8 +3,6 @@ import styles from './chat.module.css';
 import Messages from './Messages/Index';
 import ChatHeader from './Header/Index';
 import InputForMessage from './InputForMessage/Index';
-import { Route, Switch } from 'react-router-dom';
-import StartPage from './StartPage';
 import { useSelector } from 'react-redux';
 
 function Chat() {

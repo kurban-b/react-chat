@@ -4,7 +4,7 @@ import MessageInfo from './MessageInfo';
 import MessageReadChecked from './MessageReadChecked';
 import MessageTime from './MessageTime';
 import MessageDropdown from './MessageDropdown';
-import Avatar from '../../App/Avatar';
+import Avatar from '../../App/Avatar/Avatar';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 

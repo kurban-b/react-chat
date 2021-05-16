@@ -14,6 +14,7 @@ function App() {
   useEffect(() => {
     dispatch(loadApplicaton());
   }, [dispatch]);
+
   return (
     <div className={styles.container}>
       <Switch>
