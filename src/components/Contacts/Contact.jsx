@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './contacts.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import LastMessages from './Info/LastMessages';
 import NameContacts from './NameContacts';
 import { useSelector } from 'react-redux';
@@ -10,10 +10,10 @@ import Avatar from '../App/Avatar';
 
 function Contact(props) {
   const darkTheme = useSelector((state) => state.application.darkTheme);
-  const id = useSelector((state) => state.messages.activeContactId);
+
+  const id = useParams().id;
 
   //Активный чат (выделенный бэкграунд)
-
   return (
     <div
       className={
@@ -23,13 +23,17 @@ function Contact(props) {
       }
     >
       <NavLink
-        className={darkTheme ? styles.link_dark : ''}
+        className={darkTheme ? styles['link_dark'] : ''}
         to={`/contact/${props.contact._id}`}
       >
         <li>
           {/* В size рекомендуется передать параметр medium */}
-          <Avatar contact={props.contact} size={'medium'} online={props.contact.online}/>
-          <div className={styles['info_block']}>
+          <Avatar
+            fullname={props.contact.fullname}
+            size={'medium'}
+            online={props.contact.online}
+          />
+          <div className={styles['info-block']}>
             <NameContacts contacts={props.contact} />
             <LastMessages contacts={props.contact} />
           </div>
@@ -43,7 +47,6 @@ function Contact(props) {
 }
 
 Contact.propTypes = {
-  _id: PropTypes.string,
-  contact: PropTypes.object
-}
+  contact: PropTypes.object.isRequired,
+};
 export default Contact;

@@ -8,7 +8,9 @@
 .contacts {
   border-bottom: 1px solid rgba(211, 211, 211, 0.42);
 }
-
+.contacts:hover {
+  background-color: ghostwhite;
+}
 ul {
   padding: 0;
   margin-top: 60px;
@@ -57,6 +59,10 @@ a {
   cursor: pointer;
   opacity: 0.5;
 }
+.reset:hover {
+  color: red;
+  opacity: 1;
+}
 
 .name {
   font-weight: bold;
@@ -75,18 +81,21 @@ a {
   border-radius: 15px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-
+.selected:hover {
+  background-color: rgba(60, 79, 222, 0.95);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 .selected a {
   color: white;
 }
 
-.main_contact {
+.main-contact {
   overflow-y: scroll;
   height: 100%;
 }
 
 
-.info_block {
+.info-block {
   margin-left: 20px;
   margin-top: 5px;
   max-width: 220px; /*** добавил от себя свойство @Курбан ***/
@@ -100,7 +109,7 @@ a {
 }
 
 /*** стили для темной темы ***/
-.container_dark {
+.container-dark {
   width: 25%;
   box-sizing: border-box;
   background-color: #2d2d2d;
@@ -110,7 +119,7 @@ a {
 .contacts_dark {
   border-bottom: 1px solid #454545;
 }
-a.link_dark {
+a.link-dark {
   color: #ffffff;
   text-decoration: none;
 }
@@ -118,13 +127,13 @@ a.link_dark {
 
 /*CТИЛИ ДЛЯ ПРЕЛОАДЕРА*/
 
-.preloader_name {
+.preloader-name {
   padding-left: 300px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.preloader_div {
+.preloader-div {
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
@@ -132,19 +141,19 @@ a.link_dark {
 }
 
 @media only screen and (max-width: 1920px) {
-  .preloader_name {
+  .preloader-name {
     padding-left: 300px;
   }
 }
 
 @media only screen and (max-width: 1600px) {
-  .preloader_name {
+  .preloader-name {
     padding-left: 260px;
   }
 }
 
 @media only screen and (max-width: 1500px) {
-  .preloader_name {
+  .preloader-name {
     padding-left: 230px;
   }
 }
@@ -154,10 +163,10 @@ a.link_dark {
     margin-left: -5px;
   }
 
-  .preloader_div {
+  .preloader-div {
     margin-left: 10px;
   }
-  .preloader_name {
+  .preloader-name {
     padding-left: 190px;
   }
 }

@@ -8,7 +8,7 @@ function Block(props) {
     <div>
       <div className={styles.profile_avatar}>
         <Avatar
-          contact={props.contact}
+          fullname={props.contact.fullname}
           size={'medium'}
           online={props.contact.online}
         />

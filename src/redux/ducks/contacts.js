@@ -52,3 +52,9 @@ export const setFilter = (e) => {
     payload: e,
   };
 };
+
+export const getFilteredContactsSelector = (state) => {
+  return state.contacts.contacts.filter(
+    (contact) => contact.fullname.toLowerCase().indexOf(state.contacts.filter) > -1,
+  );
+}
