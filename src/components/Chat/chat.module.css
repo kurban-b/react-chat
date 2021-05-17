@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   flex: 1;
+  background-color: #fff;
 }
 .start-page h3 {
   background-color: rgba(232, 232, 232, 0.65);
@@ -277,7 +278,7 @@ div[name='dark'] .container {
 div[name='dark'] .container input {
   color: white;
 }
-div[name='dark'] .start_page {
+div[name='dark'] .start-page {
   height: 100%;
   display: flex;
   align-items: center;

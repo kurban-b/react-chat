@@ -19,7 +19,6 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         messages: action.payload,
-        activeContactId: action.id,
         loading: false,
       };
     case 'messages/adding/start':
