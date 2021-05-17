@@ -1,7 +1,7 @@
 import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import styles from '../contacts.module.css';
-function Preloader(props) {
+function Preloader() {
   return (
     <div className={styles.preloader}>
       <SkeletonTheme color="lightgray">
