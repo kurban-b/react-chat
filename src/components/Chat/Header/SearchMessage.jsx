@@ -27,7 +27,7 @@ function SearchMessage() {
   };
 
   return (
-    <div className={styles.header_search__block}>
+    <div className={styles['header-search-block']}>
       <CSSTransition
         in={isSearchIsActive}
         timeout={200}

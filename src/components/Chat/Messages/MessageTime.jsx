@@ -5,15 +5,19 @@ import moment from 'moment';
 import 'moment/locale/ru';
 
 function MessageTime({ date }) {
+  if (date === undefined) {
+    return null
+  }
+
   return (
-    <div className={styles.message__time}>
+    <div className={styles['message-time']}>
       {moment(date).locale('ru').format('LT')}
     </div>
   );
 }
 
 MessageTime.propTypes = {
-  date: PropTypes.string.isRequired,
+  date: PropTypes.string,
 };
 
 export default MessageTime;

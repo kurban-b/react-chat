@@ -7,7 +7,7 @@ function InputMassage({ text, handleChange }) {
     <>
       <input
         type="text"
-        className={styles.input__message}
+        className={styles['input-message']}
         placeholder="Введите сообщение"
         value={text}
         onChange={handleChange}

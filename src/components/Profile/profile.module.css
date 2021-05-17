@@ -97,14 +97,14 @@
 /*** Стили для темной темы ***/
 
 .container_dark {
-  background-color: #2d2d2d;
+  background-color: #242424;
   color: white;
   width: 25%;
   overflow: hidden;
 }
 .mediaBlock_dark {
   width: 100%;
-  background-color: #474747;
+  background-color: rgb(47, 46, 46);
   padding: 5px 5px;
   display: flex;
   align-items: center;
@@ -113,7 +113,7 @@
 }
 .socialBlock_dark {
   width: 100%;
-  background-color: #474747;
+  background-color: rgb(47, 46, 46);
   margin-top: 20px;
   padding-top: 15px;
   padding-bottom: 30px;

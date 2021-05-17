@@ -5,9 +5,11 @@ import { useDispatch } from 'react-redux';
 
 function Reset() {
   const dispatch = useDispatch();
+
   const handleReset = () => {
     dispatch(setFilter(''));
   };
+
   return (
     <button className={styles.reset} onClick={handleReset}>
       <span className="material-icons">clear</span>

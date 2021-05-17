@@ -4,17 +4,16 @@
   background-color: #eeeeee;
   position: relative;
   transition: 300ms;
+  overflow: scroll;
 }
-
-.contacts {
-  border-bottom: 1px solid rgba(211, 211, 211, 0.42);
+.contacts:hover {
+  background-color: rgba(75, 75, 75, 0.22);
+  transition: 300ms;
 }
-
 ul {
   padding: 0;
   margin-top: 60px;
 }
-
 li {
   list-style: none;
   padding-top: 10px;
@@ -24,34 +23,35 @@ li {
   cursor: pointer;
   display: flex;
 }
-
 p {
   margin: 0;
 }
-
 a {
-  color: black;
+  color: #171717;
   text-decoration: none;
 }
-
-.input {
-  width: 24%;
-  height: 45px;
+.search-block {
+  padding: 5px;
   position: fixed;
-  top: 8px;
-  left: 10px;
+  top: 0;
+  width: 25%;
+  z-index: 1000;
+  background-color: #eeeeee;
+}
+.input {
+  width: 100%;
+  height: 45px;
   z-index: 999;
   outline: none;
   border-radius: 8px;
   border: none;
-  text-align: center;
+  padding: 5px 35px 5px 10px;
 }
-
 .reset {
   z-index: 1000;
   position: absolute;
   right: 8px;
-  top: 18px;
+  top: 15px;
   font-size: 18px;
   background-color: transparent;
   border: none;
@@ -61,80 +61,79 @@ a {
   justify-content: center;
   align-items: center;
 }
-
 .name {
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 .messages {
   font-size: 14px;
   font-weight: 300;
 }
-
-.selected {
-  background-color: rgba(60, 79, 222, 0.95);
-  width: 100%;
+.active {
   color: white;
-  border-radius: 15px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: block;
+  background-color: #2146e2;
 }
-
-.selected a {
-  color: white;
-}
-
 .main_contact {
   overflow-y: scroll;
   height: 100%;
 }
-
 .info_block {
   margin-left: 20px;
   margin-top: 5px;
-  max-width: 220px; /*** добавил от себя свойство @Курбан ***/
+  max-width: 220px;
 }
-
 .time {
   position: absolute;
   top: 30px;
   right: 20px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /*** стили для темной темы ***/
-.container_dark {
+div[name='dark'] .container {
   transition: 300ms;
   width: 25%;
   box-sizing: border-box;
-  background-color: #2d2d2d;
+  background-color: #242424;
   position: relative;
   color: white;
+  overflow: scroll;
 }
-.contacts_dark {
-  border-bottom: 1px solid #454545;
+div[name='dark'] .contacts:hover {
+  background-color: #4b4b4b;
 }
-a.link_dark {
+div[name='dark'] .active {
+  background-color: rgba(58, 220, 149, 0.58);
+}
+div[name='dark'] a {
   color: #ffffff;
   text-decoration: none;
 }
-.container_dark input {
+div[name='dark'] .container input {
   background-color: #454545;
+  color: white;
 }
-.container_dark button {
+div[name='dark'] .container button {
   color: darkgrey;
 }
+div[name='dark'] .search-block {
+  background-color: #242424;
+}
+
 /*** конец стилей для темной темы ***/
 
 /*CТИЛИ ДЛЯ ПРЕЛОАДЕРА*/
-
-.preloader_name {
+.preloader-wrapper {
+  margin-top: 80px;
+}
+.preloader-name {
   padding-left: 300px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.preloader_div {
+.preloader-div {
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
@@ -142,19 +141,19 @@ a.link_dark {
 }
 
 @media only screen and (max-width: 1920px) {
-  .preloader_name {
+  .preloader-name {
     padding-left: 300px;
   }
 }
 
 @media only screen and (max-width: 1600px) {
-  .preloader_name {
+  .preloader-name {
     padding-left: 260px;
   }
 }
 
 @media only screen and (max-width: 1500px) {
-  .preloader_name {
+  .preloader-name {
     padding-left: 230px;
   }
 }
@@ -163,11 +162,10 @@ a.link_dark {
   input {
     margin-left: -5px;
   }
-
-  .preloader_div {
+  .preloader-div {
     margin-left: 10px;
   }
-  .preloader_name {
+  .preloader-name {
     padding-left: 190px;
   }
 }

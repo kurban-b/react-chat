@@ -33,7 +33,7 @@ function ButtonAddMessage({ content, idContact, setTextMessage }) {
   );
 
   return (
-    <CSSTransition in={stateBTN} className="input_btn" timeout={100}>
+    <CSSTransition in={stateBTN} className="input-btn" timeout={100}>
       {stateBTN ? (
         <button disabled={loadingAddMessage}>
           <span className="material-icons">mic</span>

@@ -15,7 +15,7 @@ function InputForMessage() {
   };
 
   return (
-    <div className={styles.input__block}>
+    <div className={styles['input-block']}>
       <InputMassage text={textMessage} handleChange={handleMessageInput} />
       <AddFile />
       <ButtonAddMessage

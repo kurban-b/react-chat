@@ -17,8 +17,8 @@ function ChatHeader() {
 
   if (loading) {
     return (
-      <div className={styles.header__loading}>
-        <div className={styles.header_loader__icon}>
+      <div className={styles['header-loading']}>
+        <div className={styles['header-loader-icon']}>
           <span className="material-icons">cached</span>
         </div>
         <div>Загрузка чата</div>
@@ -29,13 +29,13 @@ function ChatHeader() {
   return (
     <div className={styles.header}>
       <SearchMessage />
-      <div className={styles.header_name__block}>
+      <div className={styles['header-name-block']}>
         {contact === undefined ? (
           ''
         ) : contact.online && contact.online !== undefined ? (
           <>
             {contact.fullname}
-            <div className={styles.header_name__online} />
+            <div className={styles['header-name-online']} />
           </>
         ) : (
           contact.fullname

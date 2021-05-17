@@ -25,7 +25,7 @@ function Message({ message, profileId }) {
   return (
       <div className={isUserProfile ? styles.outgoing : styles.incoming}>
         {isUserProfile ? null : (
-          <Avatar size={'small'} online={false} contact={contact} />
+          <Avatar size={'small'} fullname={contact.fullname ? contact.fullname : ''} />
         )}
         <div
           className={
@@ -33,7 +33,7 @@ function Message({ message, profileId }) {
           }
         >
           <div className={styles.message}>{message.content}</div>
-          <div className={styles.message__time_checked}>
+          <div className={styles['message-time-checked']}>
             <MessageReadChecked message={message} isUserProfile={isUserProfile} />
             <MessageTime date={message.time} />
           </div>
@@ -45,7 +45,11 @@ function Message({ message, profileId }) {
 
 Message.propTypes = {
   message: PropTypes.object.isRequired,
-  profileId: PropTypes.string.isRequired,
+  profileId: PropTypes.string,
 };
+
+Message.defaultProps = {
+  profileId: '',
+}
 
 export default Message;

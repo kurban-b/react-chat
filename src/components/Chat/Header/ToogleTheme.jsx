@@ -22,9 +22,9 @@ function ToogleTheme() {
         exitActive: 'toggle-theme-active-exit',
       }}
     >
-      <div className={styles.toggle_theme__block}>
+      <div className={styles['toggle-theme-block']}>
         <button
-          className={`material-icons ${styles.toggle_theme}`}
+          className={`material-icons ${styles['toggle-theme']}`}
           onClick={handleToogleTheme}
         >
           {darkTheme ? 'brightness_5' : 'brightness_4'}

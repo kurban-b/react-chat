@@ -6,10 +6,25 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
-
+.container {
+  height: 100vh;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: space-between;
+}
+.container-dark {
+  height: 100vh;
+  background-color: #4c4c4c;
+  display: flex;
+  justify-content: space-between;
+}
+.chat_profile_block {
+  flex: 1;
+  display: flex;
+}
 /** CSS transition **/
-.input_btn.exit-active,
-.input_btn.enter-active {
+.input-btn.exit-active,
+.input-btn.enter-active {
   transform: scale(0);
   transition: 100ms;
 }
@@ -40,4 +55,3 @@ body {
   width: 0;
   transition: 1000ms;
 }
-

@@ -29,7 +29,7 @@ function Toggle() {
         exitActive: 'toggle-active-exit',
       }}
     >
-      <div className={styles.toggle__block} onClick={handleClick}>
+      <div className={styles['toggle-block']} onClick={handleClick}>
         <button className="material-icons">settings</button>
       </div>
     </CSSTransition>

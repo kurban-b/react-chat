@@ -8,7 +8,7 @@ function ContactBlock({ contact }) {
     <div className={styles.info}>
       <div>
         <div className={styles.avatarBlock}>
-          <Avatar size="large" contact={contact} />
+          <Avatar size="large" fullname={contact.fullname} />
         </div>
         <div className={styles.name}>{contact.fullname}</div>
         <div className={styles.username}>@{contact.username}</div>
@@ -29,7 +29,11 @@ function ContactBlock({ contact }) {
 }
 
 ContactBlock.propTypes = {
-  contact: PropTypes.object.isRequired,
+  contact: PropTypes.object,
 };
+
+ContactBlock.defaultProps = {
+  contact: {},
+}
 
 export default ContactBlock;

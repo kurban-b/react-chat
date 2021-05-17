@@ -2,23 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './avatar.module.css'
 
-function Avatar({ contact, size, online }) {
-
+function Avatar({ fullname, size, online }) {
   return (
     <div className={styles[size]}>
       <p className={online ? styles.online : null} />
-      <p> {contact !== undefined ? contact.fullname.substr(0, 1) : null} </p>
+      <p> {fullname !== undefined ? fullname.substr(0, 1) : null} </p>
     </div>
   );
 }
 
 Avatar.propTypes = {
-  contact: PropTypes.object.isRequired,
+  fullname: PropTypes.string,
   online: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 Avatar.defaultProps = {
+  fullname: '',
   online: false,
   size: 'medium',
 }

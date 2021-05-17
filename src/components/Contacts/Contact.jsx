@@ -3,44 +3,30 @@ import styles from './contacts.module.css';
 import { NavLink } from 'react-router-dom';
 import LastMessages from './Info/LastMessages';
 import NameContacts from './NameContacts';
-import { useDispatch, useSelector } from 'react-redux';
 import Time from './Info/Time';
 import { PropTypes } from 'prop-types';
 import Avatar from '../App/Avatar/Avatar';
-import { resetReducer } from '../../redux/ducks/messages';
 
 function Contact(props) {
-  const darkTheme = useSelector((state) => state.application.darkTheme);
-  const id = useSelector((state) => state.messages.activeContactId);
-
-  //Активный чат (выделенный бэкграунд)
 
   return (
-    <div
-      className={
-        id === props.contact._id
-          ? `${styles.selected} ${styles.contacts}`
-          : styles.contacts
-      }
-
-    >
+    <div className={styles.contacts}>
       <NavLink
-        className={darkTheme ? styles.link_dark : ''}
         to={`/contact/${props.contact._id}`}
+        activeClassName={styles.active}
       >
         <li>
-          {/* В size рекомендуется передать параметр medium */}
           <Avatar
-            contact={props.contact}
+            fullname={props.contact.fullname}
             size={'medium'}
             online={props.contact.online}
           />
           <div className={styles['info_block']}>
             <NameContacts contacts={props.contact} />
-            <LastMessages contacts={props.contact} />
+            <LastMessages message={props.contact.lastMessage} />
           </div>
           <div className={styles.time}>
-            <Time contacts={props.contact} />
+            <Time message={props.contact.lastMessage} />
           </div>
         </li>
       </NavLink>

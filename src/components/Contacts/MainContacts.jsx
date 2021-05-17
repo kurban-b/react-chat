@@ -1,18 +1,29 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Contact from './Contact';
-import Search from './Header/Search';
+import Search from './Header/Index';
 import styles from './contacts.module.css';
-import { getFilteredContactsSelector } from '../../redux/ducks/contacts';
-import PreloaderRow from './Preloader/PreloaderRow';
+import Preloader from './Preloader/Preloader';
 
 function MainContacts() {
-  const contacts = useSelector(getFilteredContactsSelector);
+  const contacts = useSelector((state) => {
+    return state.contacts.contacts.filter(
+      (contact) =>
+        contact.fullname
+          .toUpperCase()
+          .indexOf(state.contacts.filter.toUpperCase()) > -1,
+    );
+  });
 
   const loading = useSelector((state) => state.contacts.loading);
 
   return loading ? (
-    <PreloaderRow />
+    <div className={styles['main-contact']}>
+      <Search />
+      <div className={styles['preloader-wrapper']}>
+        <Preloader />
+      </div>
+    </div>
   ) : (
     <div className={styles['main-contact']}>
       <Search />

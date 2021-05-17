@@ -1,26 +1,26 @@
 import React, { useEffect } from 'react';
-import styles from './App.module.css';
-import Contacts from '../Contacts';
+import Contacts from '../Contacts/Index';
 import Chat from '../Chat';
 import Profile from '../Profile/Index';
 import { loadApplicaton } from '../../redux/ducks/application';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import StartPage from '../Chat/StartPage';
 
 function App() {
   const dispatch = useDispatch();
+  const darkTheme = useSelector(state => state.application.darkTheme)
 
   useEffect(() => {
     dispatch(loadApplicaton());
   }, [dispatch]);
 
   return (
-    <div className={styles.container}>
+    <div className={darkTheme ? 'container-dark' : 'container'} name={darkTheme ? 'dark' : null}>
       <Switch>
         <Route exact path={'/contact/:id?'}>
           <Contacts />
-          <div className={styles.chat_profile_block}>
+          <div className={'chat_profile_block'}>
             <Chat />
             <Profile />
           </div>
