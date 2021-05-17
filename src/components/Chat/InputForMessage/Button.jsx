@@ -7,23 +7,30 @@ import { useHotkeys } from 'react-hotkeys-hook';
 
 function ButtonAddMessage({ content, idContact, setTextMessage }) {
   const dispatch = useDispatch();
+
   const profileId = useSelector((state) => state.application.items._id);
+
   const stateBTN = content === '';
+
   const loadingAddMessage = useSelector(
     (state) => state.messages.loadingMessage,
   );
 
   const handleAddingMassage = (myId, contactId, type, message) => {
     if (message === '') {
-      return
+      return;
     }
     dispatch(addingMassage(myId, contactId, type, message));
     setTextMessage('');
   };
 
-  useHotkeys('enter', () => {
-    handleAddingMassage(profileId, idContact, 'text', content);
-  }, {enableOnTags: ['INPUT']});
+  useHotkeys(
+    'enter',
+    () => {
+      handleAddingMassage(profileId, idContact, 'text', content);
+    },
+    { enableOnTags: ['INPUT'] },
+  );
 
   return (
     <CSSTransition in={stateBTN} className="input_btn" timeout={100}>
@@ -46,9 +53,9 @@ function ButtonAddMessage({ content, idContact, setTextMessage }) {
 }
 
 ButtonAddMessage.propTypes = {
-  content: PropTypes.string,
-  idContact: PropTypes.string,
-  setTextMessage: PropTypes.func,
+  content: PropTypes.string.isRequired,
+  idContact: PropTypes.string.isRequired,
+  setTextMessage: PropTypes.func.isRequired,
 };
 
 export default ButtonAddMessage;

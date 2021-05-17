@@ -1,19 +1,20 @@
 import React from 'react';
 import styles from './contacts.module.css';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import LastMessages from './Info/LastMessages';
 import NameContacts from './NameContacts';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Time from './Info/Time';
 import { PropTypes } from 'prop-types';
-import Avatar from '../App/Avatar';
+import Avatar from '../App/Avatar/Avatar';
+import { resetReducer } from '../../redux/ducks/messages';
 
 function Contact(props) {
   const darkTheme = useSelector((state) => state.application.darkTheme);
-
-  const id = useParams().id;
+  const id = useSelector((state) => state.messages.activeContactId);
 
   //Активный чат (выделенный бэкграунд)
+
   return (
     <div
       className={
@@ -21,19 +22,20 @@ function Contact(props) {
           ? `${styles.selected} ${styles.contacts}`
           : styles.contacts
       }
+
     >
       <NavLink
-        className={darkTheme ? styles['link_dark'] : ''}
+        className={darkTheme ? styles.link_dark : ''}
         to={`/contact/${props.contact._id}`}
       >
         <li>
           {/* В size рекомендуется передать параметр medium */}
           <Avatar
-            fullname={props.contact.fullname}
+            contact={props.contact}
             size={'medium'}
             online={props.contact.online}
           />
-          <div className={styles['info-block']}>
+          <div className={styles['info_block']}>
             <NameContacts contacts={props.contact} />
             <LastMessages contacts={props.contact} />
           </div>
@@ -47,6 +49,7 @@ function Contact(props) {
 }
 
 Contact.propTypes = {
-  contact: PropTypes.object.isRequired,
+  _id: PropTypes.string,
+  contact: PropTypes.object,
 };
 export default Contact;

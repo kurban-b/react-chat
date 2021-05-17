@@ -1,5 +1,6 @@
 import { scrollMessages } from '../../addition';
 
+
 const initialState = {
   messages: [],
   loading: false,
@@ -13,8 +14,8 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loading: true,
+        messages: []
       };
-
     case 'messages/load/success':
       return {
         ...state,
@@ -63,6 +64,7 @@ export default function messages(state = initialState, action) {
         ...state,
         filter: '',
       };
+
     default:
       return state;
   }
@@ -147,14 +149,9 @@ export const removingMessage = (id) => {
     dispatch({
       type: 'messages/delete/start',
     });
-    fetch(`https://api.intocode.ru:8001/api/messages`, {
+    fetch(`https://api.intocode.ru:8001/api/messages/${id}`, {
       method: 'DELETE',
-      body: JSON.stringify({ id }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
     })
-      .then((res) => res.json())
       .then((json) => {
         dispatch({
           type: 'messages/delete/success',
@@ -166,3 +163,4 @@ export const removingMessage = (id) => {
       });
   };
 };
+

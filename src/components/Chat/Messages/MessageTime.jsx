@@ -13,7 +13,7 @@ function MessageTime({ date }) {
 }
 
 MessageTime.propTypes = {
-  date: PropTypes.string,
+  date: PropTypes.string.isRequired,
 };
 
 export default MessageTime;

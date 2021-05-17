@@ -17,8 +17,8 @@ function InputMassage({ text, handleChange }) {
 }
 
 InputMassage.propTypes = {
-  text: PropTypes.string,
-  handleChange: PropTypes.func,
+  text: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default InputMassage;

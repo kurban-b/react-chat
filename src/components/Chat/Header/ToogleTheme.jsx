@@ -6,6 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 
 function ToogleTheme() {
   const dispatch = useDispatch();
+
   const darkTheme = useSelector((state) => state.application.darkTheme);
 
   const handleToogleTheme = () => {
@@ -13,10 +14,14 @@ function ToogleTheme() {
   };
 
   return (
-    <CSSTransition in={darkTheme} timeout={200} classNames={{
-      enterActive: 'toggle-theme-active-enter',
-      exitActive: 'toggle-theme-active-exit',
-    }}>
+    <CSSTransition
+      in={darkTheme}
+      timeout={200}
+      classNames={{
+        enterActive: 'toggle-theme-active-enter',
+        exitActive: 'toggle-theme-active-exit',
+      }}
+    >
       <div className={styles.toggle_theme__block}>
         <button
           className={`material-icons ${styles.toggle_theme}`}
@@ -26,7 +31,6 @@ function ToogleTheme() {
         </button>
       </div>
     </CSSTransition>
-
   );
 }
 

@@ -7,6 +7,7 @@
   );
   flex: 1;
   padding: 0 10px;
+  transition: 300ms;
 }
 .container_dark {
   flex: 1;
@@ -14,6 +15,7 @@
   width: 35%;
   padding: 0 10px;
   color: white;
+  transition: 300ms;
 }
 .container_dark input {
   color: #b8b8b8;
@@ -24,6 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 .start_page h3 {
   background-color: rgba(232, 232, 232, 0.65);
@@ -83,8 +86,8 @@
 .messageIncoming {
   margin-left: 10px;
   word-break: break-all;
-  background-color: rgba(217, 59, 92, 0.88);
-  color: white;
+  background-color: rgba(216, 216, 255, 0.5);
+  color: #2d2d2d;
   padding: 10px 15px;
   border-radius: 15px 15px 15px 0;
   display: flex;

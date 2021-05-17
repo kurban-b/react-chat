@@ -3,14 +3,13 @@
   box-sizing: border-box;
   background-color: #eeeeee;
   position: relative;
+  transition: 300ms;
 }
 
 .contacts {
   border-bottom: 1px solid rgba(211, 211, 211, 0.42);
 }
-.contacts:hover {
-  background-color: ghostwhite;
-}
+
 ul {
   padding: 0;
   margin-top: 60px;
@@ -51,17 +50,16 @@ a {
 .reset {
   z-index: 1000;
   position: absolute;
-  right: 10px;
-  top: 20px;
+  right: 8px;
+  top: 18px;
   font-size: 18px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   opacity: 0.5;
-}
-.reset:hover {
-  color: red;
-  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .name {
@@ -81,21 +79,17 @@ a {
   border-radius: 15px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-.selected:hover {
-  background-color: rgba(60, 79, 222, 0.95);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
+
 .selected a {
   color: white;
 }
 
-.main-contact {
+.main_contact {
   overflow-y: scroll;
   height: 100%;
 }
 
-
-.info-block {
+.info_block {
   margin-left: 20px;
   margin-top: 5px;
   max-width: 220px; /*** добавил от себя свойство @Курбан ***/
@@ -109,7 +103,8 @@ a {
 }
 
 /*** стили для темной темы ***/
-.container-dark {
+.container_dark {
+  transition: 300ms;
   width: 25%;
   box-sizing: border-box;
   background-color: #2d2d2d;
@@ -119,21 +114,27 @@ a {
 .contacts_dark {
   border-bottom: 1px solid #454545;
 }
-a.link-dark {
+a.link_dark {
   color: #ffffff;
   text-decoration: none;
+}
+.container_dark input {
+  background-color: #454545;
+}
+.container_dark button {
+  color: darkgrey;
 }
 /*** конец стилей для темной темы ***/
 
 /*CТИЛИ ДЛЯ ПРЕЛОАДЕРА*/
 
-.preloader-name {
+.preloader_name {
   padding-left: 300px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.preloader-div {
+.preloader_div {
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
@@ -141,19 +142,19 @@ a.link-dark {
 }
 
 @media only screen and (max-width: 1920px) {
-  .preloader-name {
+  .preloader_name {
     padding-left: 300px;
   }
 }
 
 @media only screen and (max-width: 1600px) {
-  .preloader-name {
+  .preloader_name {
     padding-left: 260px;
   }
 }
 
 @media only screen and (max-width: 1500px) {
-  .preloader-name {
+  .preloader_name {
     padding-left: 230px;
   }
 }
@@ -163,10 +164,10 @@ a.link-dark {
     margin-left: -5px;
   }
 
-  .preloader-div {
+  .preloader_div {
     margin-left: 10px;
   }
-  .preloader-name {
+  .preloader_name {
     padding-left: 190px;
   }
 }

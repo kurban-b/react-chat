@@ -6,25 +6,29 @@ import { useParams } from 'react-router-dom';
 import { loadMessages } from '../../../redux/ducks/messages';
 
 function Messages() {
-  const messages = useSelector((state) => state.messages.messages);
-  const profile = useSelector((state) => state.application.items);
-  const params = useParams().id;
-  const dispatch = useDispatch();
   const filterFromSearch = useSelector((state) => state.messages.filter);
 
-  //Фильтрация сообщений по поиску
-  const filtered = messages.filter(
-    (message) => message.content.toUpperCase().indexOf(filterFromSearch) > -1,
-  );
+  const messages = useSelector((state) => {
+    return state.messages.messages.filter(
+      (message) =>
+        message.content.toUpperCase().indexOf(filterFromSearch.toUpperCase()) > -1,
+    );
+  });
+
+  const profile = useSelector((state) => state.application.items);
+
+  const id = useParams().id;
+
+  const dispatch = useDispatch();
 
   //Подгурзка нужных сообщений
   useEffect(() => {
-    dispatch(loadMessages(params));
-  }, [dispatch, params]);
+    dispatch(loadMessages(id));
+  }, [dispatch, id]);
 
   return (
     <div className={styles.messages} id="messages-block">
-      {filtered.map((message, index) => {
+      {messages.map((message, index) => {
         return (
           <Message message={message} profileId={profile._id} key={index} />
         );

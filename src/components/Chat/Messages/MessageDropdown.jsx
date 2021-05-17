@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 
 function MessageDropdown({ id }) {
   const dispatch = useDispatch();
+
   const handleDeleteMassage = (id) => {
     dispatch(removingMessage(id));
   };
@@ -21,14 +22,14 @@ function MessageDropdown({ id }) {
           handleDeleteMassage(id);
         }}
       >
-        <i className="fas fa-trash-alt"></i>
+        <i className="fas fa-trash-alt" />
       </li>
     </ul>
   );
 }
 
 MessageDropdown.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 };
 
 export default MessageDropdown;

@@ -9,7 +9,9 @@ import { CSSTransition } from 'react-transition-group';
 
 function SearchMessage() {
   const dispatch = useDispatch();
+
   const [isSearchIsActive, setIsSearchIsActive] = useState(false);
+
   const filter = useSelector((state) => state.messages.filter);
 
   const handleSearch = (e) => {
@@ -26,10 +28,14 @@ function SearchMessage() {
 
   return (
     <div className={styles.header_search__block}>
-      <CSSTransition in={isSearchIsActive} timeout={200} classNames={{
-        enterActive: 'search-btn-active-enter',
-        exitActive: 'search-btn-active-exit',
-      }}>
+      <CSSTransition
+        in={isSearchIsActive}
+        timeout={200}
+        classNames={{
+          enterActive: 'search-btn-active-enter',
+          exitActive: 'search-btn-active-exit',
+        }}
+      >
         <button className="material-icons" onClick={handleToggleStateActive}>
           search
         </button>
@@ -42,9 +48,13 @@ function SearchMessage() {
             value={filter}
             onChange={handleSearch}
           />
-          <button className="material-icons" onClick={handleResetSearch}>
-            clear
-          </button>
+          {filter ? (
+            <button className="material-icons" onClick={handleResetSearch}>
+              clear
+            </button>
+          ) : (
+            ''
+          )}
         </>
       ) : (
         ''
