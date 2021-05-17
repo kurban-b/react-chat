@@ -5,12 +5,11 @@ import ChatHeader from './Header/Index';
 import InputForMessage from './InputForMessage/Index';
 
 function Chat() {
-
   return (
     <div className={styles.container}>
-          <ChatHeader />
-          <Messages />
-          <InputForMessage />
+      <ChatHeader />
+      <Messages />
+      <InputForMessage />
     </div>
   );
 }

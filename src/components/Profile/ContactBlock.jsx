@@ -34,6 +34,6 @@ ContactBlock.propTypes = {
 
 ContactBlock.defaultProps = {
   contact: {},
-}
+};
 
 export default ContactBlock;

@@ -8,7 +8,6 @@ import { PropTypes } from 'prop-types';
 import Avatar from '../App/Avatar/Avatar';
 
 function Contact(props) {
-
   return (
     <div className={styles.contacts}>
       <NavLink

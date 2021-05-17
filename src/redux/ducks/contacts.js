@@ -52,4 +52,3 @@ export const setFilter = (e) => {
     payload: e,
   };
 };
-

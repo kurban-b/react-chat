@@ -12,19 +12,24 @@ function Profile() {
 
   const open = useSelector((state) => state.application.open);
 
-  const id = useParams().id
+  const id = useParams().id;
 
   const contact = useSelector((state) => {
-    return state.contacts.contacts.find(contact => id === contact._id)
+    return state.contacts.contacts.find((contact) => id === contact._id);
   });
 
   return (
-    <CSSTransition in={open} timeout={1000} classNames={{
-      enter: 'profile-enter',
-      enterActive: 'profile-enter-active',
-      exit: 'profile-exit',
-      exitActive: 'profile-exit-active',
-    }} unmountOnExit>
+    <CSSTransition
+      in={open}
+      timeout={1000}
+      classNames={{
+        enter: 'profile-enter',
+        enterActive: 'profile-enter-active',
+        exit: 'profile-exit',
+        exitActive: 'profile-exit-active',
+      }}
+      unmountOnExit
+    >
       <div className={darkTheme ? styles.container_dark : styles.container}>
         <div className={styles['profile-wrapper']}>
           <ContactBlock contact={contact} />

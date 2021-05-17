@@ -1,6 +1,5 @@
 import { scrollMessages } from '../../addition';
 
-
 const initialState = {
   messages: [],
   loading: false,
@@ -14,7 +13,7 @@ export default function messages(state = initialState, action) {
       return {
         ...state,
         loading: true,
-        messages: []
+        messages: [],
       };
     case 'messages/load/success':
       return {
@@ -163,4 +162,3 @@ export const removingMessage = (id) => {
       });
   };
 };
-

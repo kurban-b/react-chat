@@ -23,23 +23,26 @@ function Message({ message, profileId }) {
   }
 
   return (
-      <div className={isUserProfile ? styles.outgoing : styles.incoming}>
-        {isUserProfile ? null : (
-          <Avatar size={'small'} fullname={contact.fullname ? contact.fullname : ''} />
-        )}
-        <div
-          className={
-            isUserProfile ? styles.messageOutgoing : styles.messageIncoming
-          }
-        >
-          <div className={styles.message}>{message.content}</div>
-          <div className={styles['message-time-checked']}>
-            <MessageReadChecked message={message} isUserProfile={isUserProfile} />
-            <MessageTime date={message.time} />
-          </div>
-          <MessageDropdown id={message._id} />
+    <div className={isUserProfile ? styles.outgoing : styles.incoming}>
+      {isUserProfile ? null : (
+        <Avatar
+          size={'small'}
+          fullname={contact.fullname ? contact.fullname : ''}
+        />
+      )}
+      <div
+        className={
+          isUserProfile ? styles.messageOutgoing : styles.messageIncoming
+        }
+      >
+        <div className={styles.message}>{message.content}</div>
+        <div className={styles['message-time-checked']}>
+          <MessageReadChecked message={message} isUserProfile={isUserProfile} />
+          <MessageTime date={message.time} />
         </div>
+        <MessageDropdown id={message._id} />
       </div>
+    </div>
   );
 }
 
@@ -50,6 +53,6 @@ Message.propTypes = {
 
 Message.defaultProps = {
   profileId: '',
-}
+};
 
 export default Message;

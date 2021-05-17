@@ -20,7 +20,7 @@ LastMessages.propTypes = {
 };
 
 LastMessages.defaultProps = {
-  message: {}
-}
+  message: {},
+};
 
 export default LastMessages;

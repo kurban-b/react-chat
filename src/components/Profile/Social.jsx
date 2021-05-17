@@ -38,10 +38,10 @@ function Social({ contact, darkTheme }) {
 
 Social.propTypes = {
   contact: PropTypes.object,
-}
+};
 
 Social.defaultProps = {
   contact: {},
-}
+};
 
 export default Social;

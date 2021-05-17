@@ -18,7 +18,7 @@ function Toggle() {
   useHotkeys('shift+p', () => {
     dispatch(openApplication());
     setToggle(!toogle);
-  })
+  });
 
   return (
     <CSSTransition

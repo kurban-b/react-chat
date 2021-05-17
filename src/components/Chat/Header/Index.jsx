@@ -12,7 +12,7 @@ function ChatHeader() {
   const loading = useSelector((state) => state.messages.loading);
 
   const contact = useSelector((state) => {
-    return state.contacts.contacts.find((contact) => contact._id === params)
+    return state.contacts.contacts.find((contact) => contact._id === params);
   });
 
   if (loading) {

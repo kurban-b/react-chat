@@ -9,14 +9,17 @@ import StartPage from '../Chat/StartPage';
 
 function App() {
   const dispatch = useDispatch();
-  const darkTheme = useSelector(state => state.application.darkTheme)
+  const darkTheme = useSelector((state) => state.application.darkTheme);
 
   useEffect(() => {
     dispatch(loadApplicaton());
   }, [dispatch]);
 
   return (
-    <div className={darkTheme ? 'container-dark' : 'container'} name={darkTheme ? 'dark' : null}>
+    <div
+      className={darkTheme ? 'container-dark' : 'container'}
+      name={darkTheme ? 'dark' : null}
+    >
       <Switch>
         <Route exact path={'/contact/:id?'}>
           <Contacts />
@@ -30,7 +33,6 @@ function App() {
           <StartPage />
         </Route>
       </Switch>
-
     </div>
   );
 }

@@ -11,7 +11,8 @@ function Messages() {
   const messages = useSelector((state) => {
     return state.messages.messages.filter(
       (message) =>
-        message.content.toUpperCase().indexOf(filterFromSearch.toUpperCase()) > -1,
+        message.content.toUpperCase().indexOf(filterFromSearch.toUpperCase()) >
+        -1,
     );
   });
 

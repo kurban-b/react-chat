@@ -3,7 +3,6 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import styles from '../contacts.module.css';
 
 function PreloaderRow() {
-
   return (
     <div className={styles.preloader}>
       <SkeletonTheme color="rgba(88, 88, 88, 0.34)">

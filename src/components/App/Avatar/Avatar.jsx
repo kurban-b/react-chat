@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './avatar.module.css'
+import styles from './avatar.module.css';
 
 function Avatar({ fullname, size, online }) {
   return (
@@ -21,6 +21,6 @@ Avatar.defaultProps = {
   fullname: '',
   online: false,
   size: 'medium',
-}
+};
 
 export default Avatar;

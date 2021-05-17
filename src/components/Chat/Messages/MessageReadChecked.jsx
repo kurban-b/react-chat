@@ -31,5 +31,5 @@ MessageReadChecked.propTypes = {
 
 MessageReadChecked.defaultProps = {
   read: {},
-}
+};
 export default MessageReadChecked;

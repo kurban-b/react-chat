@@ -6,7 +6,7 @@ import 'moment/locale/ru';
 
 function MessageTime({ date }) {
   if (date === undefined) {
-    return null
+    return null;
   }
 
   return (
