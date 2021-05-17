@@ -3,7 +3,7 @@ import styles from '../contacts.module.css';
 import { setFilter } from '../../../redux/ducks/contacts';
 import { useDispatch } from 'react-redux';
 
-function Reset(props) {
+function Reset() {
   const dispatch = useDispatch();
   const handleReset = () => {
     dispatch(setFilter(''));
